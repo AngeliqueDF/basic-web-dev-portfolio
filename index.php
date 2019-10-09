@@ -12,9 +12,9 @@ get_header();
                 <article>
                     <header>
                         <?php the_category(); ?>
-                        <div>
-                            <?php the_post_thumbnail(); ?>
-                        </div>
+
+                        <?php the_post_thumbnail(); ?>
+
                         <h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
                     </header>
                     <div class="article-excerpt">
@@ -22,13 +22,16 @@ get_header();
                     </div>
 
                     <footer>
-                        <?php the_tags('', ' '); ?>
+                        <div class="post-tags">
+                            <?php the_tags('', ' '); ?>
+                        </div>
                         <p><?php the_author_posts_link(); ?></p>
                     </footer>
                 </article>
             </div>
     <?php } // end while
     } // end if
+    echo paginate_links();
     ?>
 </main>
 <?php

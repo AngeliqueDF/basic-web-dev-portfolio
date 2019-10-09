@@ -25,12 +25,12 @@
         </div>
 
         <div>
-            <nav class=" header-nav">
-                    <?php wp_nav_menu(array(
+            <!-- <nav class=" header-nav">
+                    <//?php wp_nav_menu(array(
                         'theme_location' => 'HeaderMenuLocation',
                         'menu_class' => 'flex'
                     ));
                 ?>
-            </nav>
+            </nav> -->
         </div>
     </header>
