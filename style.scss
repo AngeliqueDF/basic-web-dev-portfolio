@@ -1,0 +1,66 @@
+/*
+Theme Name: Basic Web Dev Portfolio
+Author: Angélique Faye
+Version: 1.0
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: basicwebdevportfolio
+*/
+html{
+    font-family: Arial, Helvetica, sans-serif;
+}
+.container{
+    width: 100%;
+    margin: 0 auto;
+}
+.flex{
+    display: flex;
+}
+a{
+    color: black;
+}
+
+/*
+HEADER
+*/
+.header-top-menu{
+    justify-content: space-between;
+}
+h1.site-name{
+    font-size: 1em;
+}
+h1.site-name,
+.mobile-menu-button{
+    margin-top: 1em;
+}
+.mobile-menu-button a{
+    text-transform: uppercase;
+}
+.header-nav ul{
+    padding: 0;
+    list-style-type: none;
+}
+
+/*
+Content
+*/
+article{
+    margin: 5em auto;
+    border-top: 5px solid black;
+    padding: 0 0.3em;
+}
+article a{
+    text-decoration: none;
+    &:hover{
+        text-decoration: underline;
+    }
+}
+article .post-categories{
+    list-style-type: none;
+    padding: 0;
+    text-transform: uppercase;
+}
+.article-excerpt{
+    font-size: 1.2em;
+    line-height: 1.3em;
+}
