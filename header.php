@@ -13,7 +13,7 @@
 <body>
 
     <header>
-        <div class="header-top-menu flex">
+        <div class="header-top-menu">
             <div>
                 <h1 class="site-name">
                     <a href="<?php bloginfo('url'); ?>"><?php bloginfo('name'); ?></a>
@@ -25,11 +25,11 @@
         </div>
 
         <div>
-            <nav class="header-nav">
-                <?php wp_nav_menu(array(
-                    'theme_location' => 'HeaderMenuLocation',
-                    // 'menu_class' => 'flex'
-                ));
+            <nav class=" header-nav">
+                    <?php wp_nav_menu(array(
+                        'theme_location' => 'HeaderMenuLocation',
+                        'menu_class' => 'flex'
+                    ));
                 ?>
             </nav>
         </div>
