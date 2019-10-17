@@ -11,10 +11,23 @@ html {
   font-family: Arial, Helvetica, sans-serif;
   box-sizing: border-box;
   background-color: white;
+  word-wrap: break-word;
+}
+
+body {
+  margin: 0;
+}
+
+main {
+  margin-top: 8em;
+}
+
+.home.blog main {
+  margin-top: 1em;
 }
 
 .container {
-  width: 98%;
+  width: 90%;
   margin: 0 auto;
 }
 
@@ -22,14 +35,106 @@ html {
   display: flex;
 }
 
-a {
-  color: black;
+/*
+*LINKS
+*/
+header.main-header a {
   text-decoration: none;
+  text-transform: uppercase;
+  color: white;
+  opacity: 1;
+  font-size: 0.7em;
+  text-shadow: 0 0 1px white;
+}
+
+article header h2 a {
+  text-decoration-color: #0077c0;
+}
+
+span.page-numbers.current,
+span.post-page-numbers.current {
+  font-size: 1.1em;
+  font-weight: bolder;
+}
+
+span.page-numbers {
+  text-decoration-color: cornflowerblue;
+}
+
+a {
+  color: #1d242b;
+  opacity: 0.8;
+  text-decoration-color: #0077c0;
+}
+a:hover {
+  opacity: 1;
 }
 
 img {
   max-width: 100%;
   height: auto;
+}
+
+.main-header nav ul li a,
+.main-footer nav ul li a {
+  text-decoration: underline;
+}
+
+.main-header {
+  padding: 0 0.7em;
+  background-color: #0097ec;
+  z-index: 2;
+  color: white;
+}
+
+.main-footer {
+  background-color: #222222;
+  padding: 2em;
+  text-transform: uppercase;
+}
+.main-footer a {
+  color: white;
+}
+
+.breadcrumbs,
+.paginate-links {
+  margin: 1em 0;
+  font-size: 1.2em;
+}
+
+.project-type {
+  text-transform: uppercase;
+  font-size: 0.85em;
+  font-weight: 400;
+}
+
+.project,
+article {
+  flex-basis: 100%;
+  padding: 1em;
+  margin: 1em auto;
+  border: 1px solid lightgray;
+  border-radius: 3px;
+}
+.project:hover,
+article:hover {
+  box-shadow: 0 2px 15px 0 rgba(0, 0, 0, 0.22);
+}
+.project footer ul,
+article footer ul {
+  display: flex;
+  list-style-type: none;
+  padding: 0;
+  flex-wrap: wrap;
+}
+.project footer ul li,
+article footer ul li {
+  margin: 0.5em;
+}
+
+section.projects {
+  display: flex;
+  flex-wrap: wrap;
 }
 
 /* =WordPress Core
@@ -145,25 +250,87 @@ a img.aligncenter {
 }
 
 /*
+* COMMENT FORM 
+*/
+div.comments ul {
+  list-style-type: none;
+  padding-left: 1em;
+}
+div.comments ul li {
+  margin: 1em 0;
+}
+div.comments ul li .comment-author {
+  display: flex;
+  align-items: center;
+}
+div.comments ul li .comment-author .avatar,
+div.comments ul li .comment-author .fn,
+div.comments ul li .comment-author .says {
+  margin: 0.1em 0.2em;
+}
+div.comments ul li .comment-body {
+  padding: 0.25em 1em;
+  border-radius: 3px;
+}
+div.comments ul li .comment-body div.reply {
+  padding: 1em 0;
+}
+div.comments ul li .comment-body div.reply a.comment-reply-link {
+  background-color: black;
+  color: white;
+  padding: 0.5em;
+}
+div.comments ul li .comment-body div.comment-meta a {
+  color: lightgrey;
+}
+div.comments ul li .comment-body span.says {
+  color: lightgrey;
+}
+
+/*
+COMMENT FORM
+*/
+.comment-respond label {
+  display: block;
+}
+
+.comment-respond textarea {
+  border: 1px solid lightgrey;
+  border-radius: 3px;
+  width: 90%;
+  font-family: inherit;
+  padding: 0.25em 1em;
+  margin: 0 auto;
+}
+
+.form-submit input.submit {
+  background-color: black;
+  border: none;
+  color: white;
+  padding: 1em;
+  font-size: 1em;
+}
+
+/*
 HEADER
 */
-header {
+body > header {
   margin-bottom: 1em;
 }
-header .header-top-menu {
+body > header .header-top-menu {
   justify-content: space-between;
   display: flex;
 }
-header .mobile-menu-button a {
+body > header .mobile-menu-button a {
   text-transform: uppercase;
-}
-header h1.site-name,
-header .mobile-menu-button {
-  margin-top: 1em;
 }
 
 h1.site-name {
-  font-size: 1.1em;
+  font-size: 1.5em;
+}
+
+.header-nav {
+  display: none;
 }
 
 .header-nav ul,
@@ -190,42 +357,33 @@ h1.site-name {
 /*
  * Content
  */
-article {
-  width: 90%;
-  margin-bottom: 5em;
-  border-top: 3px solid black;
-  padding: 0 0.3em;
+section {
+  padding: 0.5em;
 }
-article a {
-  text-decoration: none;
+
+section.hero {
+  padding: 2em 1em;
 }
-article a:hover {
-  text-decoration: underline;
+section.hero h2 {
+  font-size: 1.5em;
 }
+
 article header .post-categories {
   list-style-type: none;
   padding: 0;
   text-transform: uppercase;
 }
-article .article-excerpt {
-  font-size: 1.2em;
-  line-height: 1.3em;
-}
-article footer .post-tags {
-  display: flex;
-  flex-wrap: wrap;
-}
+
 article footer .post-tags a {
   background-color: black;
-  border-radius: 5px;
   padding: 5px 10px;
   color: white;
-  margin: 5px;
 }
 
-.post-content article img {
-  max-width: 100% !important;
-  height: auto;
+.sticky {
+  margin-bottom: 5em;
+  border-radius: 3px;
+  border: 2px solid #ffc300;
 }
 
 @media only screen and (min-width: 768px) {
@@ -237,6 +395,27 @@ article footer .post-tags a {
   h1.site-name {
     font-size: 1.3em;
   }
+
+  article .article-excerpt,
+p {
+    font-size: 1.3em;
+    line-height: 1.4em;
+  }
+
+  .comment-body {
+    max-width: 70%;
+  }
+  .comment-body p {
+    font-size: 1.2em;
+  }
+
+  .comment-respond textarea {
+    width: 90%;
+  }
+
+  .home.blog main {
+    margin-top: 0.5em;
+  }
 }
 @media only screen and (min-width: 1024px) {
   .container {
@@ -246,6 +425,21 @@ article footer .post-tags a {
 
   h1.site-name {
     font-size: 1.5em;
+  }
+
+  .home.blog main {
+    margin-top: 1em;
+  }
+
+  .comment-body {
+    max-width: 50%;
+  }
+  .comment-body p {
+    font-size: 1.4em;
+  }
+
+  .project {
+    flex-basis: 45%;
   }
 }
 

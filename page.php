@@ -4,7 +4,7 @@ get_header();
 
 <div class="container">
     <main class="post-content">
-        <?php 
+        <?php
         the_breadcrumb();
         if (have_posts()) {
             while (have_posts()) {
