@@ -12,6 +12,7 @@ html {
   box-sizing: border-box;
   background-color: white;
   word-wrap: break-word;
+  font-size: 18px;
 }
 
 body {
@@ -19,7 +20,7 @@ body {
 }
 
 main {
-  margin-top: 8em;
+  min-width: 50vh;
 }
 
 .home.blog main {
@@ -63,7 +64,7 @@ span.page-numbers {
 
 a {
   color: #1d242b;
-  opacity: 0.8;
+  opacity: 0.9;
   text-decoration-color: #0077c0;
 }
 a:hover {
@@ -119,6 +120,15 @@ article {
 .project:hover,
 article:hover {
   box-shadow: 0 2px 15px 0 rgba(0, 0, 0, 0.22);
+  border-color: #0097ec;
+}
+.project .post-categories li a,
+.project .article-author small a,
+.project .article-excerpt a,
+article .post-categories li a,
+article .article-author small a,
+article .article-excerpt a {
+  text-decoration: none;
 }
 .project footer ul,
 article footer ul {
@@ -132,7 +142,7 @@ article footer ul li {
   margin: 0.5em;
 }
 
-section.projects {
+.projects-list {
   display: flex;
   flex-wrap: wrap;
 }
@@ -325,12 +335,16 @@ body > header .mobile-menu-button a {
   text-transform: uppercase;
 }
 
+.mobile-menu-button,
 h1.site-name {
   font-size: 1.5em;
+  margin-top: 0.5em;
 }
 
 .header-nav {
   display: none;
+  font-size: 1.2em;
+  z-index: 2;
 }
 
 .header-nav ul,
@@ -363,9 +377,14 @@ section {
 
 section.hero {
   padding: 2em 1em;
+  text-align: center;
 }
 section.hero h2 {
-  font-size: 1.5em;
+  font-size: 1.7em;
+}
+
+h2 {
+  opacity: 0.75;
 }
 
 article header .post-categories {
@@ -374,7 +393,7 @@ article header .post-categories {
   text-transform: uppercase;
 }
 
-article footer .post-tags a {
+div.post-tags a {
   background-color: black;
   padding: 5px 10px;
   color: white;
@@ -384,6 +403,21 @@ article footer .post-tags a {
   margin-bottom: 5em;
   border-radius: 3px;
   border: 2px solid #ffc300;
+}
+.sticky:hover {
+  border-color: #ffc300;
+}
+
+.post-content {
+  border: none;
+}
+.post-content:hover {
+  box-shadow: none;
+}
+.post-content p {
+  opacity: 0.8;
+  font-size: 1.1em;
+  line-height: 1.5em;
 }
 
 @media only screen and (min-width: 768px) {
@@ -398,7 +432,7 @@ article footer .post-tags a {
 
   article .article-excerpt,
 p {
-    font-size: 1.3em;
+    font-size: 1.2em;
     line-height: 1.4em;
   }
 
@@ -439,7 +473,7 @@ p {
   }
 
   .project {
-    flex-basis: 45%;
+    flex-basis: 42%;
   }
 }
 

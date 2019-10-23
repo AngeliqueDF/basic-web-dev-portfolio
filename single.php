@@ -3,7 +3,7 @@ get_header();
 ?>
 
 <div class="container">
-    <main class="post-content">
+    <main>
         <?php 
         the_breadcrumb();
         if (have_posts()) {
@@ -11,7 +11,7 @@ get_header();
                 the_post();
                 ?>
                 <div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-                    <article>
+                    <article class="post-content">
                         <header>
                             <?php the_category(); ?>
                             <div class="thumbnail-container">
@@ -25,8 +25,8 @@ get_header();
 
                         <footer>
                             <div class="post-tags">
-                                <?php the_tags('', ' '); ?>
-                            </div>
+                            <?php the_tags('<ul><li>', '</li><li>', '</li></ul>'); ?>
+                        </div>
                             <p><?php the_author_posts_link(); ?></p>
                         </footer>
                     </article>

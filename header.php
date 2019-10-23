@@ -19,14 +19,14 @@
                     <a href="<?php bloginfo('url'); ?>">Angélique D. Faye, web dev</a>
                 </h1>
             </div>
-            <!-- <div>
+             <div>
                 <h1 class="site-name">
-                    <a href="<?//php bloginfo('url'); ?>"><//?php bloginfo('name'); ?></a>
+                    <a href="<?php bloginfo('url'); ?>"><//?php bloginfo('name'); ?></a>
                 </h1>
-            </div> -->
-            <!-- <div class="mobile-menu-button">
+            </div>
+            <div class="mobile-menu-button">
                 <a href="#"">Menu</a>
-            </div> -->
+            </div>
         </div>
 
         <div>

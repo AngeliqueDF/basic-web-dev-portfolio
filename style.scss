@@ -12,12 +12,13 @@ html {
   box-sizing: border-box;
   background-color: white;
   word-wrap: break-word;
+  font-size: 18px;
 }
 body {
   margin: 0;
 }
 main {
-  margin-top: 8em;
+  min-width: 50vh;
 }
 .home.blog main {
   margin-top: 1em;
@@ -56,16 +57,14 @@ span.post-page-numbers.current {
 span.page-numbers {
   text-decoration-color: cornflowerblue;
 }
-
 a {
   color: #1d242b;
-  opacity: 0.8;
+  opacity: 0.9;
   text-decoration-color: #0077c0;
   &:hover {
     opacity: 1;
   }
 }
-
 img {
   max-width: 100%;
   height: auto;
@@ -99,35 +98,42 @@ img {
   margin: 1em 0;
   font-size: 1.2em;
 }
-.project-type{
-    text-transform: uppercase;
-    font-size: 0.85em;
-    font-weight: 400;
+.project-type {
+  text-transform: uppercase;
+  font-size: 0.85em;
+  font-weight: 400;
 }
 .project,
-article{
+article {
   flex-basis: 100%;
-    padding: 1em;
-    margin: 1em auto;
-    border: 1px solid lightgray;
-    border-radius: 3px;
-    &:hover{
-        box-shadow: 0 2px 15px 0 rgba(0, 0, 0, 0.22);
-    }
-    footer ul{
-      display: flex;
-      list-style-type: none;
-      padding: 0;
-      flex-wrap: wrap;
-      li{
-        margin: 0.5em;
-      }
-    }
-}
-section.projects {
+  padding: 1em;
+  margin: 1em auto;
+  border: 1px solid lightgray;
+  border-radius: 3px;
+  &:hover {
+    box-shadow: 0 2px 15px 0 rgba(0, 0, 0, 0.22);
+    border-color: #0097ec;
+  }
+  .post-categories li a,
+  .article-author small a,
+  .article-excerpt a {
+    text-decoration: none;
+  }
+  footer ul {
     display: flex;
+    list-style-type: none;
+    padding: 0;
     flex-wrap: wrap;
+    li {
+      margin: 0.5em;
+    }
+  }
 }
+.projects-list {
+  display: flex;
+  flex-wrap: wrap;
+}
+
 /* =WordPress Core
 -------------------------------------------------------------- */
 .alignnone {
@@ -315,16 +321,16 @@ body > header {
   .mobile-menu-button a {
     text-transform: uppercase;
   }
-  // h1.site-name,
-  // .mobile-menu-button {
-  //   margin-top: 1em;
-  // }
 }
+.mobile-menu-button,
 h1.site-name {
   font-size: 1.5em;
+  margin-top: 0.5em;
 }
 .header-nav {
   display: none;
+  font-size: 1.2em;
+  z-index: 2;
 }
 .header-nav ul,
 .footer-nav ul {
@@ -357,34 +363,48 @@ h1.site-name {
 section {
   padding: 0.5em;
 }
-section.hero{
+section.hero {
   padding: 2em 1em;
+  text-align: center;
   h2 {
-    font-size: 1.5em;
+    font-size: 1.7em;
   }
 }
+h2 {
+  opacity: 0.75;
+}
 article header {
-    .post-categories {
-      list-style-type: none;
-      padding: 0;
-      text-transform: uppercase;
-    }
+  .post-categories {
+    list-style-type: none;
+    padding: 0;
+    text-transform: uppercase;
   }
-article footer .post-tags a {
-    background-color: black;
-    padding: 5px 10px;
-    color: white;
+}
+div.post-tags a {
+  background-color: black;
+  padding: 5px 10px;
+  color: white;
 }
 
 .sticky {
   margin-bottom: 5em;
   border-radius: 3px;
   border: 2px solid #ffc300;
+  &:hover {
+    border-color: #ffc300;
+  }
 }
-// .post-content article img{
-//     max-width: 100% !important;
-//     height: auto;
-// }
+.post-content {
+  border: none;
+  &:hover {
+    box-shadow: none;
+  }
+  p {
+    opacity: 0.8;
+    font-size: 1.1em;
+    line-height: 1.5em;
+  }
+}
 @media only screen and (min-width: 768px) {
   .container {
     width: 70%;
@@ -395,7 +415,7 @@ article footer .post-tags a {
   }
   article .article-excerpt,
   p {
-    font-size: 1.3em;
+    font-size: 1.2em;
     line-height: 1.4em;
   }
   .comment-body {
@@ -433,7 +453,7 @@ article footer .post-tags a {
       font-size: 1.4em;
     }
   }
-  .project{
-    flex-basis: 45%;
+  .project {
+    flex-basis: 42%;
   }
 }

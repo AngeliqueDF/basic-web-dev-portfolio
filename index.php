@@ -14,6 +14,9 @@ get_header();
             ); */ ?>
         <!-- </div> -->
     </div>
+    <div class="container">
+        <h2>Blog</h2>
+    </div>
     <?php
     if (have_posts()) {
         while (have_posts()) {
@@ -29,7 +32,7 @@ get_header();
                         </div>
 
                         <h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
-                        <p><small><?php the_author_posts_link(); ?></small></p>
+                        <p class="article-author"><small><?php the_author_posts_link(); ?></small></p>
                     </header>
                     <div class="article-excerpt">
                         <a href="<?php the_permalink(); ?>"><?php the_excerpt(); ?></a>

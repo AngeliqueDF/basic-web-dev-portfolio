@@ -14,16 +14,15 @@
         </section>
 
         <section class="projects">
+        <h2>Projets</h2>
+        <div class="projects-list">
             <?php
-            // $arg = array(
-            //     'posts_per_page' => 3,
-            //     'order' => 'DESC'
-            // );
-            // The Query
-            $the_query = new WP_Query(array(
+            $args = array(
                 'posts_per_page' => 3,
                 'order' => 'DESC'
-            ));
+            );
+            // The Query
+            $the_query = new WP_Query($args);
 
             if ($the_query->have_posts()) {
                 while ($the_query->have_posts()) {
@@ -60,6 +59,7 @@
                 echo "no post";
             }
             ?>
+            </div>
         </section>
 </main>
 
