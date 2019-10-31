@@ -2,7 +2,7 @@
 
 <main>
     <section class="hero">
-        <h2>Je suis développeuse-intégratrice de sites Internet et Applications Web</h2>
+        <h2>Je suis développeuse-intégratrice de sites Internet et Applications Web.</h2>
     </section>
     <div class="container">
         <section class="learning">
@@ -19,7 +19,8 @@
             <?php
             $args = array(
                 'posts_per_page' => 3,
-                'order' => 'DESC'
+                'order' => 'DESC',
+                'category_name' => 'realisations'
             );
             // The Query
             $the_query = new WP_Query($args);
@@ -28,7 +29,7 @@
                 while ($the_query->have_posts()) {
                     $the_query->the_post();
                     ?>
-                    <!-- <div class="container"> -->
+                    <!-- include template parts according to post format -->
                     <article id="post-<?php the_ID(); ?>" <?php post_class('project'); ?>>
                         <header>
                             <p class="project-type"><?php the_category(); ?></p>
@@ -37,29 +38,37 @@
                             </div>
 
                             <h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
+                            <div class="project-links">
+                                <?php
+                                $fields = get_field_objects();
+                                if( $fields ): ?>
+                                        <?php foreach( $fields as $field ): ?>
+                                            <?php if($field['value'] != ''): ?>
+                                                <a href="<?php echo $field['value']; ?>"><?php echo $field['label']; ?></a>
+                                            <?php endif; ?>
+                                        <?php endforeach; ?>
+                                <?php endif; ?>
+                            </div>
                         </header>
                         <div class="article-excerpt">
-                            <a href="javascript:void();">Brief</a>
+                            <a href="<?php the_permalink(); ?>"><?php the_excerpt(); ?></a>
                         </div>
 
                         <footer>
                             <div class="post-tags">
                                 <?php if (has_tag()) { ?>
-                                    <p>Technologies et outils utilisés :</p>
                                 <?php the_tags('<ul><li>', '</li><li>', '</li></ul>');
                                         } ?>
                             </div>
                         </footer>
                     </article>
-
-                    <!-- /.container -->
             <?php } // end while
             } // end if
             else {
                 echo "no post";
             }
             ?>
-            </div>
+        </div>
         </section>
 </main>
 

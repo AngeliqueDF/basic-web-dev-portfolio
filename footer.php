@@ -7,6 +7,9 @@
         ));
         ?>
     </nav>
+    <div class="site-created-by">
+        <a href="https://adf.dev">© Angélique D. Faye</a>
+    </div>
 </footer>
 
 </html>

@@ -33,6 +33,16 @@ get_header();
 
                         <h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
                         <p class="article-author"><small><?php the_author_posts_link(); ?></small></p>
+                        <?php $fields = get_field_objects(); ?>
+                        <?php if( $fields ): ?>
+                        <p>Voir le code sur
+                                <?php foreach( $fields as $field ): ?>
+                                    <?php if($field['value'] != ''): ?>
+                                        <a href="<?php echo $field['value']; ?>"><?php echo $field['label']; ?></a>
+                                    <?php endif; ?>
+                                <?php endforeach; ?>
+                        </p>
+                        <?php endif; ?>
                     </header>
                     <div class="article-excerpt">
                         <a href="<?php the_permalink(); ?>"><?php the_excerpt(); ?></a>

@@ -18,6 +18,16 @@ get_header();
                                 <?php the_post_thumbnail(); ?>
                             </div>
                             <h2><?php the_title(); ?></h2>
+                            <?php $fields = get_field_objects(); ?>
+                                <?php if( $fields ): ?>
+                                <p>Voir le code sur
+                                        <?php foreach( $fields as $field ): ?>
+                                            <?php if($field['value'] != ''): ?>
+                                                <a href="<?php echo $field['value']; ?>"><?php echo $field['label']; ?></a>
+                                            <?php endif; ?>
+                                        <?php endforeach; ?>
+                                </p>
+                                <?php endif; ?>
                         </header>
                         <?php wp_link_pages(); ?>
                         <?php the_content(); ?>
@@ -25,8 +35,8 @@ get_header();
 
                         <footer>
                             <div class="post-tags">
-                            <?php the_tags('<ul><li>', '</li><li>', '</li></ul>'); ?>
-                        </div>
+                                <?php the_tags('<ul><li>', '</li><li>', '</li></ul>'); ?>
+                            </div>
                             <p><?php the_author_posts_link(); ?></p>
                         </footer>
                     </article>

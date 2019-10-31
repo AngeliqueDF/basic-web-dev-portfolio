@@ -1,22 +1,19 @@
 <?php
 
-function link_css_files(){
+function add_theme_styles(){
+    // wp_enqueue_script('script', get_theme_file_uri('js/script.js'));
     wp_enqueue_style('style', get_stylesheet_uri());
 }
-add_action('wp_enqueue_scripts', 'link_css_files');
+add_action('wp_enqueue_scripts', 'add_theme_styles');
 
-function theme_features()
-{
-    register_nav_menu('HeaderMenuLocation', ('Header Menu Location'));
-    register_nav_menu('FooterLocationOne', ('Footer Menu Location'));
-    add_theme_support('post-thumbnails');
+
+function add_theme_scripts(){
+    wp_enqueue_script('script', get_theme_file_uri('js/script.js'));
+    // wp_enqueue_style('style', get_stylesheet_uri());
 }
-add_action('after_setup_theme', 'theme_features');
+add_action('wp_footer', 'add_theme_scripts');
 
-/*=============================================
-=            BREADCRUMBS			            =
-=============================================*/
-//  to include in functions.php
+//  add breadcrumbs
 function the_breadcrumb() {
     $sep = ' > ';
     if (!is_front_page()) {
@@ -73,3 +70,12 @@ function the_breadcrumb() {
 /*
 * Credit: http://www.thatweblook.co.uk/blog/tutorials/tutorial-wordpress-breadcrumb-function/
 */
+
+if ( ! function_exists( 'basic_web_dev_portfolio_setup' ) ) :
+    
+	function basic_web_dev_portfolio_setup() {
+		add_theme_support( 'title-tag' );
+		add_theme_support( 'post-thumbnails' );
+        }
+    endif;
+add_action( 'after_setup_theme', 'basic_web_dev_portfolio_setup' );
