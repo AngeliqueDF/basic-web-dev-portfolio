@@ -1,0 +1,13 @@
+//add shadow and change border-color on hover
+@mixin card{
+    padding: 1em;
+    margin: 1em;
+    border: 1px solid lightgray;
+    border-radius: 3px;
+}
+//increase opacity on hover
+@mixin opacity-on-hover($opacity: 1){
+    &:hover{
+        opacity: $opacity;
+    }
+}

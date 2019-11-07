@@ -431,6 +431,17 @@ div.post-tags a {
   line-height: 1.5em;
 }
 
+/*
+ * Comments
+ */
+#submit {
+  background-color: #0097ec;
+  border-radius: 0.25em;
+}
+
+/*
+ * Footer
+ */
 .site-created-by {
   text-align: center;
 }

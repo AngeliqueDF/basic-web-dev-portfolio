@@ -14,9 +14,6 @@ get_header();
             ); */ ?>
         <!-- </div> -->
     </div>
-    <div class="container">
-        <h2>Blog</h2>
-    </div>
     <?php
     if (have_posts()) {
         while (have_posts()) {
