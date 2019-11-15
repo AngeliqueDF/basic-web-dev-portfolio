@@ -18,7 +18,7 @@
         <div class="projects-list">
             <?php
             $args = array(
-                'posts_per_page' => 3,
+                // 'posts_per_page' => 3,
                 'order' => 'DESC',
                 'category_name' => 'realisations'
             );

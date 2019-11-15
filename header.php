@@ -20,7 +20,7 @@
                 </h1>
             </div>
             <div class="mobile-menu-button">
-                <a href="javascript:void(0);">Menu</a>
+                <a href="javascript:void(0);" tabindex="0">Menu</a>
             </div>
         </div>
 
