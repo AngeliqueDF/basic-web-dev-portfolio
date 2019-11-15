@@ -14,14 +14,14 @@
 
     <header class="main-header">
         <div class="header-top-menu">
-             <div>
+             <!-- <div> -->
                 <h1 class="site-name">
                     <a href="<?php bloginfo('url'); ?>"><?php bloginfo('name'); ?></a>
                 </h1>
-            </div>
-            <div class="mobile-menu-button">
-                <a href="javascript:void(0);" tabindex="0">Menu</a>
-            </div>
+            <!-- </div> -->
+            <!-- <div class="mobile-menu-button"> -->
+                <a href="javascript:void(0);" tabindex="0" class="mobile-menu-button">Menu</a>
+            <!-- </div> -->
         </div>
 
         <div>
