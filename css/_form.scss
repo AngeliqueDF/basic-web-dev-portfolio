@@ -1,2 +1,14 @@
 // contact
+
 // comment
+// form input, textarea#comment
+@mixin wp-comment-form{
+    min-height: 2em;
+    width: 100%;
+    border-width: 0;
+    padding: 1em;
+    border-radius: 3px;
+    box-sizing: border-box;
+    font-size: 0.8em;
+    font-family: inherit;
+}

@@ -2,7 +2,7 @@
 
 <main>
     <section class="hero">
-        <h2>Je suis développeuse-intégratrice de sites Internet et Applications Web.</h2>
+        <h2>Je suis développeuse-intégratrice de sites Internet et Applications Web junior.</h2>
     </section>
     <div class="container">
         <section class="learning">

@@ -20,13 +20,13 @@ get_header();
                             <h2><?php the_title(); ?></h2>
                             <?php $fields = get_field_objects(); ?>
                                 <?php if( $fields ): ?>
-                                <p>Voir le code sur
+                                <ul class="projects-external-links">
                                         <?php foreach( $fields as $field ): ?>
                                             <?php if($field['value'] != ''): ?>
-                                                <a href="<?php echo $field['value']; ?>"><?php echo $field['label']; ?></a>
+                                                <li><a href="<?php echo $field['value']; ?>"><?php echo $field['label']; ?></a></li>
                                             <?php endif; ?>
                                         <?php endforeach; ?>
-                                </p>
+                                            </ul>
                                 <?php endif; ?>
                         </header>
                         <?php wp_link_pages(); ?>
@@ -34,10 +34,11 @@ get_header();
                         <?php wp_link_pages(); ?>
 
                         <footer>
+                        <p><?php the_author_posts_link(); ?></p>
                             <div class="post-tags">
                                 <?php the_tags('<ul><li>', '</li><li>', '</li></ul>'); ?>
                             </div>
-                            <p><?php the_author_posts_link(); ?></p>
+                            
                         </footer>
                     </article>
                 </div>
