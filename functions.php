@@ -1,15 +1,14 @@
 <?php
 
 function add_theme_styles(){
-    // wp_enqueue_script('script', get_theme_file_uri('js/script.js'));
     wp_enqueue_style('style', get_stylesheet_uri());
+    wp_enqueue_style('hamburgers.min', get_theme_file_uri( './css/hamburgers.min.css' ));
 }
 add_action('wp_enqueue_scripts', 'add_theme_styles');
 
 
 function add_theme_scripts(){
     wp_enqueue_script('script', get_theme_file_uri('js/script.js'));
-    // wp_enqueue_style('style', get_stylesheet_uri());
 }
 add_action('wp_footer', 'add_theme_scripts');
 
@@ -79,3 +78,9 @@ if ( ! function_exists( 'basic_web_dev_portfolio_setup' ) ) :
         }
     endif;
 add_action( 'after_setup_theme', 'basic_web_dev_portfolio_setup' );
+
+register_nav_menus(
+    array(
+    'HeaderMenuLocation' => __( 'Primary Menu' ),
+    )
+);

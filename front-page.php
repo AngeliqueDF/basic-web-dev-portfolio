@@ -2,19 +2,41 @@
 
 <main>
     <section class="hero">
-        <h2>Je suis développeuse-intégratrice de sites Internet et Applications Web junior.</h2>
+        <h2>Angélique D. Faye</h2>
+        <p>Développeuse-intégratrice web</p>
     </section>
-    <div class="container">
-        <section class="learning">
+
+
+        <section class="skills">
+            <h2>Compétences</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem veritatis eum, vero vitae quam illum?</p>
+                <ul>
+                    <li>Intégration
+                        <ul>
+                            <li>toto</li>
+                            <li>toto</li>
+                            <li>toto</li>
+                        </ul>
+                    </li>
+                </ul>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo recusandae ea nulla iste aperiam. Debitis?</p>
+            <ul>
+                <li>toto</li>
+                <li>toto</li>
+            </ul>
+        </section>
+
+
+        <!-- <section class="learning">
             <h2>Ce que j'apprends en ce moment</h2>
             <ul>
                 <li>Node.js et Express</li>
                 <li>Algorithmie</li>
             </ul>
-        </section>
+        </section> -->
 
         <section class="projects">
-        <h2>Projets</h2>
+        <h2>Réalisations</h2>
         <div class="projects-list">
             <?php
             $args = array(
@@ -68,7 +90,7 @@
                 echo "no post";
             }
             ?>
-        </div>
+
         </section>
 </main>
 
