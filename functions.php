@@ -3,7 +3,6 @@
 function add_theme_styles(){
     wp_enqueue_style('style', get_stylesheet_uri());
     wp_enqueue_style('hamburgers.min', get_theme_file_uri( '/css/hamburgers.min.css' ));
-    wp_enqueue_style('custom-google-fonts',  '<link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,700,900&display=swap" rel="stylesheet">' );
 }
 add_action('wp_enqueue_scripts', 'add_theme_styles');
 
