@@ -9,7 +9,9 @@ Text Domain: basicwebdevportfolio
 */
 html {
   font-family: Arial, Helvetica, sans-serif;
+  font-family: "Montserrat", sans-serif;
   box-sizing: border-box;
+  border-collapse: collapse;
   background-color: white;
   word-wrap: break-word;
   font-size: 18px;
@@ -29,11 +31,11 @@ main {
 }
 
 body.single {
-  margin-top: 2em;
+  margin-top: 4em;
 }
 
 .container {
-  width: 95%;
+  width: 98%;
   margin: 0 auto;
 }
 
@@ -63,6 +65,7 @@ header.main-header {
   min-height: 2em;
   display: flex;
   flex-wrap: wrap;
+  justify-content: space-around;
 }
 header.main-header .site-name {
   flex-basis: 85%;
@@ -117,10 +120,20 @@ img {
   height: auto;
 }
 
-.main-header nav ul li a,
+.main-header nav ul li a {
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 1em;
+  font-weight: bold;
+}
+
 .main-footer nav ul li a {
   text-decoration: underline;
   text-transform: uppercase;
+}
+
+ul {
+  padding-left: 1.2em;
 }
 
 .main-header {
@@ -453,12 +466,11 @@ section h2 {
 }
 
 section.hero {
-  padding: 2em 1em;
-  text-align: center;
   background: linear-gradient(90deg, #00d2ff 0%, #3a47d5 100%);
   background-clip: border-box;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  padding-top: 2em;
 }
 section.hero h2,
 section.hero p {
@@ -542,6 +554,9 @@ main.post-content {
     margin-top: 5em;
   }
 
+  section.hero {
+    padding: 1em 4em;
+  }
   section.hero h2 {
     font-size: 4em;
   }
@@ -571,13 +586,21 @@ p {
   }
 }
 @media only screen and (min-width: 1024px) {
-  .container {
-    width: 55%;
-    margin: 0 auto;
-  }
-
   .home.blog {
     margin-top: 5em;
+  }
+
+  .main-header .site-name {
+    flex-basis: auto;
+  }
+
+  .main-header .mobile-menu-button {
+    display: none;
+  }
+
+  .main-header nav {
+    display: block;
+    flex-basis: auto;
   }
 
   .comment-body {
