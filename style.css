@@ -7,15 +7,9 @@ License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: basicwebdevportfolio
 */
-@font-face {
-  font-family: "Montserrat-Regular";
-  src: url("./../fonts/Montserrat-Regular.woff") format("woff");
-  src: url("https://adf.dev/fonts/Montserrat-Regular.woff") format("woff");
-  font-weight: normal;
-  font-style: normal;
-}
+@import url("https://adf.dev/fonts2/stylesheet.css");
 html {
-  font-family: "Montserrat-Regular", sans-serif;
+  font-family: "Montserrat", sans-serif;
   box-sizing: border-box;
   border-collapse: collapse;
   background-color: white;
