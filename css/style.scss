@@ -9,8 +9,8 @@ Text Domain: basicwebdevportfolio
 @font-face {
     font-family: 'Montserrat';
     src: local('Montserrat Medium'), local('Montserrat-Medium'),
-        url('subset-Montserrat-Medium.woff2') format('woff2'),
-        url('subset-Montserrat-Medium.woff') format('woff');
+        url('css/fonts/subset-Montserrat-Medium.woff2') format('woff2'),
+        url('css/fonts/subset-Montserrat-Medium.woff') format('woff');
     font-weight: 500;
     font-style: normal;
 }
@@ -18,8 +18,8 @@ Text Domain: basicwebdevportfolio
 @font-face {
     font-family: 'Montserrat';
     src: local('Montserrat Black'), local('Montserrat-Black'),
-        url('subset-Montserrat-Black.woff2') format('woff2'),
-        url('subset-Montserrat-Black.woff') format('woff');
+        url('css/fonts/subset-Montserrat-Black.woff2') format('woff2'),
+        url('css/fonts/subset-Montserrat-Black.woff') format('woff');
     font-weight: 900;
     font-style: normal;
 }
@@ -27,8 +27,8 @@ Text Domain: basicwebdevportfolio
 @font-face {
     font-family: 'Montserrat';
     src: local('Montserrat ExtraBold Italic'), local('Montserrat-ExtraBoldItalic'),
-        url('subset-Montserrat-ExtraBoldItalic.woff2') format('woff2'),
-        url('subset-Montserrat-ExtraBoldItalic.woff') format('woff');
+        url('css/fonts/subset-Montserrat-ExtraBoldItalic.woff2') format('woff2'),
+        url('css/fonts/subset-Montserrat-ExtraBoldItalic.woff') format('woff');
     font-weight: 800;
     font-style: italic;
 }
@@ -36,8 +36,8 @@ Text Domain: basicwebdevportfolio
 @font-face {
     font-family: 'Montserrat';
     src: local('Montserrat ExtraLight'), local('Montserrat-ExtraLight'),
-        url('subset-Montserrat-ExtraLight.woff2') format('woff2'),
-        url('subset-Montserrat-ExtraLight.woff') format('woff');
+        url('css/fonts/subset-Montserrat-ExtraLight.woff2') format('woff2'),
+        url('css/fonts/subset-Montserrat-ExtraLight.woff') format('woff');
     font-weight: 200;
     font-style: normal;
 }
@@ -45,8 +45,8 @@ Text Domain: basicwebdevportfolio
 @font-face {
     font-family: 'Montserrat';
     src: local('Montserrat Regular'), local('Montserrat-Regular'),
-        url('subset-Montserrat-Regular.woff2') format('woff2'),
-        url('subset-Montserrat-Regular.woff') format('woff');
+        url('css/fonts/subset-Montserrat-Regular.woff2') format('woff2'),
+        url('css/fonts/subset-Montserrat-Regular.woff') format('woff');
     font-weight: normal;
     font-style: normal;
 }
@@ -54,8 +54,8 @@ Text Domain: basicwebdevportfolio
 @font-face {
     font-family: 'Montserrat';
     src: local('Montserrat Thin'), local('Montserrat-Thin'),
-        url('subset-Montserrat-Thin.woff2') format('woff2'),
-        url('subset-Montserrat-Thin.woff') format('woff');
+        url('css/fonts/subset-Montserrat-Thin.woff2') format('woff2'),
+        url('css/fonts/subset-Montserrat-Thin.woff') format('woff');
     font-weight: 100;
     font-style: normal;
 }
@@ -63,8 +63,8 @@ Text Domain: basicwebdevportfolio
 @font-face {
     font-family: 'Montserrat';
     src: local('Montserrat Black Italic'), local('Montserrat-BlackItalic'),
-        url('subset-Montserrat-BlackItalic.woff2') format('woff2'),
-        url('subset-Montserrat-BlackItalic.woff') format('woff');
+        url('css/fonts/subset-Montserrat-BlackItalic.woff2') format('woff2'),
+        url('css/fonts/subset-Montserrat-BlackItalic.woff') format('woff');
     font-weight: 900;
     font-style: italic;
 }
@@ -72,8 +72,8 @@ Text Domain: basicwebdevportfolio
 @font-face {
     font-family: 'Montserrat';
     src: local('Montserrat Light'), local('Montserrat-Light'),
-        url('subset-Montserrat-Light.woff2') format('woff2'),
-        url('subset-Montserrat-Light.woff') format('woff');
+        url('css/fonts/subset-Montserrat-Light.woff2') format('woff2'),
+        url('css/fonts/subset-Montserrat-Light.woff') format('woff');
     font-weight: 300;
     font-style: normal;
 }
@@ -81,8 +81,8 @@ Text Domain: basicwebdevportfolio
 @font-face {
     font-family: 'Montserrat';
     src: local('Montserrat ExtraLight Italic'), local('Montserrat-ExtraLightItalic'),
-        url('subset-Montserrat-ExtraLightItalic.woff2') format('woff2'),
-        url('subset-Montserrat-ExtraLightItalic.woff') format('woff');
+        url('css/fonts/subset-Montserrat-ExtraLightItalic.woff2') format('woff2'),
+        url('css/fonts/subset-Montserrat-ExtraLightItalic.woff') format('woff');
     font-weight: 200;
     font-style: italic;
 }
@@ -90,8 +90,8 @@ Text Domain: basicwebdevportfolio
 @font-face {
     font-family: 'Montserrat';
     src: local('Montserrat Italic'), local('Montserrat-Italic'),
-        url('subset-Montserrat-Italic.woff2') format('woff2'),
-        url('subset-Montserrat-Italic.woff') format('woff');
+        url('css/fonts/subset-Montserrat-Italic.woff2') format('woff2'),
+        url('css/fonts/subset-Montserrat-Italic.woff') format('woff');
     font-weight: normal;
     font-style: italic;
 }
@@ -99,8 +99,8 @@ Text Domain: basicwebdevportfolio
 @font-face {
     font-family: 'Montserrat';
     src: local('Montserrat Bold'), local('Montserrat-Bold'),
-        url('subset-Montserrat-Bold.woff2') format('woff2'),
-        url('subset-Montserrat-Bold.woff') format('woff');
+        url('css/fonts/subset-Montserrat-Bold.woff2') format('woff2'),
+        url('css/fonts/subset-Montserrat-Bold.woff') format('woff');
     font-weight: bold;
     font-style: normal;
 }
@@ -108,8 +108,8 @@ Text Domain: basicwebdevportfolio
 @font-face {
     font-family: 'Montserrat';
     src: local('Montserrat SemiBold'), local('Montserrat-SemiBold'),
-        url('subset-Montserrat-SemiBold.woff2') format('woff2'),
-        url('subset-Montserrat-SemiBold.woff') format('woff');
+        url('css/fonts/subset-Montserrat-SemiBold.woff2') format('woff2'),
+        url('css/fonts/subset-Montserrat-SemiBold.woff') format('woff');
     font-weight: 600;
     font-style: normal;
 }
@@ -117,8 +117,8 @@ Text Domain: basicwebdevportfolio
 @font-face {
     font-family: 'Montserrat';
     src: local('Montserrat SemiBold Italic'), local('Montserrat-SemiBoldItalic'),
-        url('subset-Montserrat-SemiBoldItalic.woff2') format('woff2'),
-        url('subset-Montserrat-SemiBoldItalic.woff') format('woff');
+        url('css/fonts/subset-Montserrat-SemiBoldItalic.woff2') format('woff2'),
+        url('css/fonts/subset-Montserrat-SemiBoldItalic.woff') format('woff');
     font-weight: 600;
     font-style: italic;
 }
@@ -126,8 +126,8 @@ Text Domain: basicwebdevportfolio
 @font-face {
     font-family: 'Montserrat';
     src: local('Montserrat Thin Italic'), local('Montserrat-ThinItalic'),
-        url('subset-Montserrat-ThinItalic.woff2') format('woff2'),
-        url('subset-Montserrat-ThinItalic.woff') format('woff');
+        url('css/fonts/subset-Montserrat-ThinItalic.woff2') format('woff2'),
+        url('css/fonts/subset-Montserrat-ThinItalic.woff') format('woff');
     font-weight: 100;
     font-style: italic;
 }
@@ -135,8 +135,8 @@ Text Domain: basicwebdevportfolio
 @font-face {
     font-family: 'Montserrat';
     src: local('Montserrat Medium Italic'), local('Montserrat-MediumItalic'),
-        url('subset-Montserrat-MediumItalic.woff2') format('woff2'),
-        url('subset-Montserrat-MediumItalic.woff') format('woff');
+        url('css/fonts/subset-Montserrat-MediumItalic.woff2') format('woff2'),
+        url('css/fonts/subset-Montserrat-MediumItalic.woff') format('woff');
     font-weight: 500;
     font-style: italic;
 }
@@ -144,8 +144,8 @@ Text Domain: basicwebdevportfolio
 @font-face {
     font-family: 'Montserrat';
     src: local('Montserrat ExtraBold'), local('Montserrat-ExtraBold'),
-        url('subset-Montserrat-ExtraBold.woff2') format('woff2'),
-        url('subset-Montserrat-ExtraBold.woff') format('woff');
+        url('css/fonts/subset-Montserrat-ExtraBold.woff2') format('woff2'),
+        url('css/fonts/subset-Montserrat-ExtraBold.woff') format('woff');
     font-weight: 800;
     font-style: normal;
 }
@@ -153,8 +153,8 @@ Text Domain: basicwebdevportfolio
 @font-face {
     font-family: 'Montserrat';
     src: local('Montserrat Light Italic'), local('Montserrat-LightItalic'),
-        url('subset-Montserrat-LightItalic.woff2') format('woff2'),
-        url('subset-Montserrat-LightItalic.woff') format('woff');
+        url('css/fonts/subset-Montserrat-LightItalic.woff2') format('woff2'),
+        url('css/fonts/subset-Montserrat-LightItalic.woff') format('woff');
     font-weight: 300;
     font-style: italic;
 }
@@ -162,8 +162,8 @@ Text Domain: basicwebdevportfolio
 @font-face {
     font-family: 'Montserrat';
     src: local('Montserrat Bold Italic'), local('Montserrat-BoldItalic'),
-        url('subset-Montserrat-BoldItalic.woff2') format('woff2'),
-        url('subset-Montserrat-BoldItalic.woff') format('woff');
+        url('css/fonts/subset-Montserrat-BoldItalic.woff2') format('woff2'),
+        url('css/fonts/subset-Montserrat-BoldItalic.woff') format('woff');
     font-weight: bold;
     font-style: italic;
 }
