@@ -1,14 +1,19 @@
 <?php
 
 function add_theme_styles(){
-    wp_enqueue_style('style', get_stylesheet_uri());
+    // Get last modified timestamp of CSS file in /css/style.css
+    $last_modified_css_time = strval(filemtime( get_template_directory() . '/style.css' ));
+
+    wp_enqueue_style('style', get_stylesheet_uri(), array(), $last_modified_css_time, all);
     wp_enqueue_style('hamburgers.min', get_theme_file_uri( '/css/hamburgers.min.css' ));
 }
 add_action('wp_enqueue_scripts', 'add_theme_styles');
 
 
 function add_theme_scripts(){
-    wp_enqueue_script('script', get_theme_file_uri('/js/script.js'));
+    $last_modified_js_time = strval(filemtime( get_template_directory('/js/script.js' )));
+
+    wp_enqueue_script('script', get_theme_file_uri('/js/script.js'), array(), $last_modified_js_time, all, false);
 }
 add_action('wp_footer', 'add_theme_scripts');
 
@@ -84,35 +89,3 @@ register_nav_menus(
     'HeaderMenuLocation' => __( 'Primary Menu' ),
     )
 );
-
-/**
- * Auto-versioning CSS and JavaScript in WordPress
- * @author Eric Binnion
- * https://manofhustle.com
- */
-
-add_action("wp_enqueue_scripts", "auto_version_scripts", 20);
-function auto_version_scripts() {
-  // Get last modified timestamp of CSS file in /css/style.css
-  $ctime = filemtime( get_template_directory() . '/style.css' );
-//   $ctime = filemtime( get_stylesheet_uri() );
-
-// Get last modified timestamp of JS file in /js/main.js
-  $jtime = filemtime( get_template_directory() . '/js/script.js' );
-
-wp_enqueue_style(
-    'custom_style', // handle for style.css
-    get_template_directory_uri() .'/style.css' ,
-    array(), // dependencies
-    $ctime, // version number
-    true // load in footer
-  );
-
-wp_enqueue_script(
-    'custom_js', // handle for main.js
-    get_template_directory_uri() .'/js/script.js' ,
-    array(), // dependencies
-    $time, // version number
-    true // load in footer
-  );
-}
