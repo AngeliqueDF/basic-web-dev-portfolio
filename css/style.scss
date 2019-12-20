@@ -20,7 +20,7 @@ body {
   min-height: 80vh;
 }
 main {
-  min-width: 50vh;
+  min-height: 50vh;
 }
 .home.blog {
   margin-top: 1.5em;
@@ -113,10 +113,15 @@ img {
   text-transform: uppercase;
   font-size: 1em;
   font-weight: bold;
+  &:hover{
+    text-decoration: underline;
+  }
 }
 .main-footer nav ul li a {
   text-decoration: underline;
   text-transform: uppercase;
+  font-size: 1.5em;
+  font-weight: bold;
 }
 ul{
   padding-left: 1.2em;
@@ -130,7 +135,7 @@ ul{
   right: 0;
 }
 .main-footer {
-  background-color: #222222;
+  background: linear-gradient(138deg, #00d2ff 0%, #3a47d5 100%);
   padding: 2em;
   text-transform: uppercase;
   a {
