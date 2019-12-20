@@ -32,7 +32,7 @@ get_header();
                         <p class="article-author"><small><?php the_author_posts_link(); ?></small></p>
                         <?php $fields = get_field_objects(); ?>
                         <?php if( $fields ): ?>
-                        <p>Voir le code sur
+                        <p>
                                 <?php foreach( $fields as $field ): ?>
                                     <?php if($field['value'] != ''): ?>
                                         <a href="<?php echo $field['value']; ?>"><?php echo $field['label']; ?></a>

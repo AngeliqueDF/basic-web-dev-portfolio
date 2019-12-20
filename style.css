@@ -23,6 +23,7 @@ body {
 
 main {
   min-height: 50vh;
+  margin-top: 4em;
 }
 
 .home.blog {
@@ -51,10 +52,13 @@ body.single {
 */
 a {
   color: black;
-  text-decoration-color: #1c8eea;
+  text-decoration-color: #3a47d5;
 }
 a:active {
   color: red;
+}
+a:hover {
+  text-decoration: none;
 }
 
 header.main-header {
@@ -101,8 +105,10 @@ div.page article {
   padding: 1em;
 }
 
-article header h2 a {
-  text-decoration-color: #0077c0;
+article header h2 a,
+article header h3 a {
+  text-decoration-color: #3a47d5;
+  color: #3a47d5;
 }
 
 span.page-numbers.current,
@@ -135,9 +141,6 @@ img {
   text-transform: uppercase;
   font-size: 1.5em;
   font-weight: bold;
-}
-.main-footer nav ul li a:active {
-  text-decoration: none;
 }
 
 ul {
@@ -175,7 +178,7 @@ ul {
 }
 
 body.archive > main article {
-  margin: 2em 1em 6em 1em;
+  margin: 1em;
   padding: 1em;
 }
 
@@ -199,12 +202,24 @@ article:active {
   border-color: #0097ec;
 }
 .project .post-categories li a,
+article .post-categories li a {
+  font-size: 0.85em;
+}
+.project .article-excerpt a,
+article .article-excerpt a {
+  font-size: 1.2em;
+}
+.project .post-categories li a,
 .project .article-author small a,
 .project .article-excerpt a,
 article .post-categories li a,
 article .article-author small a,
 article .article-excerpt a {
   text-decoration: none;
+}
+.project footer p a,
+article footer p a {
+  font-size: 0.85em;
 }
 .project footer ul,
 article footer ul {
@@ -221,6 +236,10 @@ article footer ul li {
 .projects-list {
   display: flex;
   flex-wrap: wrap;
+}
+
+.project-links a:hover {
+  text-decoration: none;
 }
 
 .projects-external-links {
@@ -508,14 +527,18 @@ div.post-tags a {
   background-color: #3a47d5;
   padding: 5px 10px;
   text-decoration-color: white;
+  font-size: 0.8em;
 }
 div.post-tags a:hover {
   background-color: white;
   color: #3a47d5;
   text-decoration-color: white;
+  transition: background-color 100ms linear;
+  transition: color 100ms linear;
 }
 div.post-tags a:active {
   color: #00d2ff;
+  transition: color 100ms linear;
 }
 
 .sticky {
