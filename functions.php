@@ -95,13 +95,14 @@ add_action("wp_enqueue_scripts", "auto_version_scripts", 20);
 function auto_version_scripts() {
   // Get last modified timestamp of CSS file in /css/style.css
   $ctime = filemtime( get_template_directory() . '/style.css' );
+//   $ctime = filemtime( get_stylesheet_uri() );
 
 // Get last modified timestamp of JS file in /js/main.js
   $jtime = filemtime( get_template_directory() . '/js/script.js' );
 
 wp_enqueue_style(
     'custom_style', // handle for style.css
-    get_template_directory_uri() .'style.css' ,
+    get_template_directory_uri() .'/style.css' ,
     array(), // dependencies
     $ctime, // version number
     true // load in footer
