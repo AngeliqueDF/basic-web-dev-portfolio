@@ -123,6 +123,9 @@ img {
   text-transform: uppercase;
   font-size: 1.5em;
   font-weight: bold;
+  &:active{
+    text-decoration: none;
+  }
 }
 ul {
   padding-left: 1.2em;
@@ -474,10 +477,18 @@ article header {
   }
 }
 div.post-tags a {
-  padding: 5px 10px;
   color: white;
   background-color: #3a47d5;
+  padding: 5px 10px;
   text-decoration-color: white;
+  &:hover{
+    background-color: white;
+    color: #3a47d5;
+    text-decoration-color: white;
+  }
+  &:active{
+    color: #00d2ff;
+  }
 }
 
 .sticky {

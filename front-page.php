@@ -34,7 +34,7 @@
             </ul>
 
             <h3>Intégration</h3>
-            <p>J'intègre vos maquettes vers différents supports :</p>
+            <p>J'intègre vos maquettes le support de votre choix :</p>
             <ul>
                 <li>Site vitrine.</li>
                 <li>Thème WordPress.</li>
