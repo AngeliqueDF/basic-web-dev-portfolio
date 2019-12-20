@@ -8,7 +8,7 @@ Text Domain: basicwebdevportfolio
 */
 
 html {
-  font-family: 'Montserrat';
+  font-family: "Montserrat";
   box-sizing: border-box;
   border-collapse: collapse;
   background-color: white;
@@ -53,25 +53,26 @@ a {
 //site name
 header.main-header {
   background-color: white;
-  box-shadow: 0px 1px 10px #D9D9D9;
+  box-shadow: 0px 1px 10px #d9d9d9;
   align-items: center;
   min-height: 2em;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
-  .site-name{
+  .site-name {
     flex-basis: 85%;
   }
-  .mobile-menu-button{
+  .mobile-menu-button {
     flex-basis: 10%;
   }
-  .hamburger{
+  .hamburger {
     padding: 5px;
     padding-top: 10px;
-    .hamburger-inner, 
-    .hamburger-inner::after, 
-    .hamburger-inner::before{
+    .hamburger-inner,
+    .hamburger-inner::after,
+    .hamburger-inner::before {
       width: 30px;
+      height: 2px;
     }
   }
 }
@@ -108,12 +109,12 @@ img {
   max-width: 100%;
   height: auto;
 }
-.main-header nav ul li a{
+.main-header nav ul li a {
   text-decoration: none;
   text-transform: uppercase;
   font-size: 1em;
   font-weight: bold;
-  &:hover{
+  &:hover {
     text-decoration: underline;
   }
 }
@@ -123,7 +124,7 @@ img {
   font-size: 1.5em;
   font-weight: bold;
 }
-ul{
+ul {
   padding-left: 1.2em;
 }
 .main-header {
@@ -418,7 +419,7 @@ body > header {
   font-size: 1.2em;
   z-index: 2;
   flex-basis: 100%;
-  .menu{
+  .menu {
     text-align: center;
   }
 }
@@ -435,7 +436,7 @@ body > header {
  */
 section {
   padding: 0.5em;
-  h2{
+  h2 {
     background: linear-gradient(90deg, #00d2ff 0%, #3a47d5 20%);
     background-clip: border-box;
     -webkit-background-clip: text;
@@ -458,10 +459,10 @@ section.hero {
   h2 {
     font-size: 2em;
   }
-  p{
+  p {
     font-size: 1.2em;
   }
-  a{
+  a {
     color: white;
   }
 }
@@ -473,10 +474,10 @@ article header {
   }
 }
 div.post-tags a {
-  background-color: #0077c0;
-  // background: linear-gradient(45deg, #00d2ff 0%, #3a47d5 20%);
   padding: 5px 10px;
   color: white;
+  background-color: #3a47d5;
+  text-decoration-color: white;
 }
 
 .sticky {
@@ -525,12 +526,12 @@ div.post-tags a {
   main.post-content {
     margin-top: 5em;
   }
-  section.hero{
+  section.hero {
     padding: 1em 4em;
-    h2{
+    h2 {
       font-size: 4em;
     }
-    p{
+    p {
       font-size: 2.5em;
     }
   }
@@ -556,13 +557,13 @@ div.post-tags a {
   .home.blog {
     margin-top: 5em;
   }
-  .main-header .site-name{
+  .main-header .site-name {
     flex-basis: auto;
   }
-  .main-header .mobile-menu-button{
+  .main-header .mobile-menu-button {
     display: none;
   }
-  .main-header nav{
+  .main-header nav {
     display: block;
     flex-basis: auto;
   }
