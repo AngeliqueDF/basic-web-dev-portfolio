@@ -6,10 +6,10 @@ var menuButton = document.querySelector('.mobile-menu-button');
 // toggle header nav hide/display
 function toggleHeaderNav(){    
     //get menu
-    var headerNav = document.querySelector('nav.header-nav');
+    var headerNav = document.querySelector('.header-nav');
     headerNav.classList.toggle('display-none');
-    headerNav.classList.toggle('height-transition');
     menuButton.classList.toggle('is-active');
+    headerNav.classList.toggle('height-transition');
 }
 //listen for click or tap event
 menuButton.addEventListener("click", toggleHeaderNav);

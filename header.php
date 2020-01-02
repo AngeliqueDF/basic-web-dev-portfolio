@@ -13,9 +13,8 @@
 
     <header class="main-header">
         <h1 class="site-name">
-            <a href="<?php bloginfo('url'); ?>"><?php bloginfo('name'); ?></a>
+            <a href="<?php bloginfo('url'); ?>" tabindex="0"><?php bloginfo('name'); ?></a>
         </h1>
-        <!-- <a href="javascript:void(0);" tabindex="0" class="mobile-menu-button">Menu</a> -->
         <button class="hamburger hamburger--slider mobile-menu-button" type="button">
             <span class="hamburger-box">
             <span class="hamburger-inner"></span>

@@ -1,5 +1,15 @@
 //horizontal list
-@mixin horizontal-list($justify:space-around) {
+@mixin horizontal-list($justify: space-around) {
   display: flex;
   justify-content: $justify;
+}
+.container {
+  width: 98%;
+  margin: 0 auto;
+}
+.flex {
+  display: flex;
+}
+.display-none {
+  display: none;
 }

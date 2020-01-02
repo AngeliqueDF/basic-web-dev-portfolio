@@ -5,14 +5,7 @@ get_header();
 <main>
     <div class="container">
         <?php the_breadcrumb(); ?>
-        <!-- <div class="paginate-links"> -->
-        <?php /*echo paginate_links(
-                $args = array(
-                    'prev_text'          => __('« Page précédente'),
-                    'next_text'          => __('Page suivante »')
-                )
-            ); */ ?>
-        <!-- </div> -->
+        
     </div>
     <?php
     if (have_posts()) {
@@ -24,9 +17,6 @@ get_header();
                 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
                     <header>
                         <?php the_category(); ?>
-                        <div class="thumbnail-container">
-                            <?php the_post_thumbnail(); ?>
-                        </div>
 
                         <h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
                         <p class="article-author"><small><?php the_author_posts_link(); ?></small></p>
@@ -41,9 +31,6 @@ get_header();
                         </p>
                         <?php endif; ?>
                     </header>
-                    <div class="article-excerpt">
-                        <a href="<?php the_permalink(); ?>"><?php the_excerpt(); ?></a>
-                    </div>
 
                     <footer>
                         <div class="post-tags">

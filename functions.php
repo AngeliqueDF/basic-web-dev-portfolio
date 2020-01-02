@@ -1,7 +1,7 @@
 <?php
 
 function add_theme_styles(){
-    // Get last modified timestamp of CSS file in /css/style.css
+    // Get last modified timestamp of style.css file
     $last_modified_css_time = strval(filemtime( get_template_directory() . '/style.css' ));
 
     wp_enqueue_style('style', get_stylesheet_uri(), array(), $last_modified_css_time, all);
@@ -11,6 +11,7 @@ add_action('wp_enqueue_scripts', 'add_theme_styles');
 
 
 function add_theme_scripts(){
+    // Get last modified timestamp of /js/script.js file
     $last_modified_js_time = strval(filemtime( get_template_directory('/js/script.js' )));
 
     wp_enqueue_script('script', get_theme_file_uri('/js/script.js'), array(), $last_modified_js_time, all, false);
@@ -19,7 +20,7 @@ add_action('wp_footer', 'add_theme_scripts');
 
 //  add breadcrumbs
 function the_breadcrumb() {
-    $sep = ' > ';
+    $sep = ' / ';
     if (!is_front_page()) {
 	
 	// Start the breadcrumb with a link to your homepage
@@ -49,12 +50,12 @@ function the_breadcrumb() {
 	// If the current page is a single post, show its title with the separator
         if (is_single()) {
             echo $sep;
-            the_title();
+            the_title("<a>", "</a>");
         }
 	
 	// If the current page is a static page, show its title.
         if (is_page()) {
-            echo the_title();
+            the_title("<a>", "</a>");
         }
 	
 	// if you have a static page assigned to be you posts list page. It will find the title of the static page and display it. i.e Home >> Blog
