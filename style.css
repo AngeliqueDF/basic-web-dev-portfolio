@@ -152,7 +152,7 @@ html {
   background-color: white;
   word-wrap: break-word;
   font-family: "Inter", serif;
-  font-feature-settings: "ss01" 1, "ss02" 1, "ss03" 1;
+  font-feature-settings: "ss01" 1, "ss02" 1, "ss03" 1, "liga" 1;
   font-size: 20px;
 }
 
@@ -199,6 +199,10 @@ a:active {
 }
 a:hover {
   text-decoration: none;
+}
+
+a[href*="//"]:not([href*="adf.dev"])::after {
+  content: " ↗ ";
 }
 
 .main-footer nav ul li a {
@@ -336,7 +340,7 @@ span.page-numbers {
   margin-top: 4.5em;
 }
 .breadcrumbs a {
-  background-color: lightgray;
+  background-color: whitesmoke;
   padding: 0.2em 0.3em;
   border-radius: 2px;
   text-decoration: none;
@@ -350,18 +354,23 @@ span.page-numbers {
   color: #00d2ff;
 }
 
+div.meta {
+  border-bottom: 1px solid whitesmoke;
+}
+div.meta > * {
+  color: lightgrey;
+  margin: 0;
+}
+
 .skills ul {
-  display: flex;
-  justify-content: flex-start;
-  padding-left: 0;
+  padding-left: 1em;
   list-style: none;
-  flex-wrap: wrap;
+  font-weight: 500;
 }
 .skills ul li {
   margin: 0.1em;
-  display: inline;
-  background-color: #0042c0;
-  color: white;
+  list-style-type: none;
+  color: #f27818;
   padding: 5px 10px;
 }
 .skills ul li::before {
@@ -395,7 +404,7 @@ body.archive > main article {
 article {
   flex-basis: 100%;
   border: 1px solid lightgray;
-  border-radius: 3px;
+  border-radius: 5px;
 }
 .project .post-categories li a,
 article .post-categories li a {
@@ -419,6 +428,7 @@ article footer ul {
   list-style-type: none;
   padding: 0;
   flex-wrap: wrap;
+  margin-bottom: 1em;
 }
 .project footer ul li,
 article footer ul li {
@@ -440,13 +450,25 @@ article footer ul li {
 }
 
 .projects-external-links {
-  padding: 0;
+  padding: 0.5em 0;
   list-style: none;
   display: flex;
   align-content: space-between;
+  text-decoration: none;
 }
 .projects-external-links li {
   margin-right: 0.25em;
+}
+.projects-external-links li a {
+  color: black;
+  background: whitesmoke;
+  padding: 5px;
+  border-radius: 5px;
+  text-decoration: none;
+}
+.projects-external-links li a:hover {
+  background-color: black;
+  color: whitesmoke;
 }
 
 /* =WordPress Core
@@ -562,74 +584,6 @@ a img.aligncenter {
 }
 
 /*
-CONTACT FORM
-*/
-.nf-form-layout label {
-  color: #0042c0;
-}
-
-.nf-form-content button,
-.nf-form-content input[type=button],
-.nf-form-content input[type=submit] {
-  background-color: #0042c0 !important;
-}
-
-/*
-COMMENT FORM 
-*/
-form input,
-textarea#comment {
-  min-height: 2em;
-  width: 100%;
-  border-width: 0;
-  box-sizing: border-box;
-  font-family: inherit;
-  font-size: 0.75em;
-  border: 2px solid lightgrey;
-  padding: 0.25em;
-}
-form input:focus,
-textarea#comment:focus {
-  border: 2px solid #3a47d5;
-}
-
-div.comments ul {
-  list-style-type: none;
-  padding: 0;
-}
-div.comments ul li {
-  margin: 0;
-  background-color: white;
-}
-div.comments ul li .comment-author {
-  display: flex;
-  align-items: center;
-  margin-bottom: 0.25em;
-}
-div.comments ul li .comment-author .avatar,
-div.comments ul li .comment-author .fn {
-  margin: 0.1em 0.2em 0 0;
-}
-div.comments ul li .comment-author .says {
-  display: none;
-}
-div.comments ul li .comment-body {
-  padding: 0.5em;
-}
-div.comments ul li .comment-body div.reply {
-  padding: 0.5em 0;
-}
-div.comments ul li .comment-body div.reply a.comment-reply-link {
-  padding: 0.5em;
-  text-decoration: none;
-  background-color: lightgray;
-}
-div.comments ul li .comment-body div.comment-meta a {
-  text-decoration: none;
-  font-size: 0.6em;
-}
-
-/*
 CONTENT
 */
 article header h2 a,
@@ -642,29 +596,31 @@ article header .post-categories {
   list-style-type: none;
   padding: 0;
   text-transform: uppercase;
+  margin: 0;
 }
 
 div.post-tags a {
-  color: white;
-  background-color: #0042c0;
   padding: 5px 10px;
   text-decoration-color: white;
-}
-div.post-tags a:hover {
-  background-color: white;
-  color: #0042c0;
+  border: 1px solid;
+  padding: 5px 10px;
   text-decoration-color: white;
-  transition: background-color 100ms linear;
-  transition: color 100ms linear;
+  border-radius: 5px;
+  background-color: #0042c0;
+  color: white;
 }
 div.post-tags a:active {
   color: #00d2ff;
-  transition: color 100ms linear;
+}
+div.post-tags a:hover {
+  color: #0042c0;
+  background-color: white;
+  transition: background-color 100ms linear;
 }
 
 .sticky {
   margin-bottom: 5em;
-  border-radius: 3px;
+  border-radius: 5px;
   border: 2px solid #ffc300;
 }
 .sticky:hover {
@@ -679,6 +635,10 @@ div.post-tags a:active {
 }
 .post-content p {
   line-height: 1.7em;
+}
+.post-content div.main-article-content {
+  border-bottom: 1px solid whitesmoke;
+  margin: 0 0 2em 0;
 }
 
 /*
@@ -712,7 +672,7 @@ COMMENT FORM
 
 .comment-respond textarea {
   border: 2px solid lightgrey;
-  border-radius: 3px;
+  border-radius: 5px;
   width: 90%;
   font-family: inherit;
   margin: 0 auto;
@@ -728,6 +688,83 @@ COMMENT FORM
 
 #submit {
   background-color: #0042c0;
+  border-radius: 5px;
+}
+
+/*
+CONTACT FORM
+*/
+.nf-form-layout label {
+  color: #0042c0;
+}
+
+.nf-form-content button,
+.nf-form-content input[type=button],
+.nf-form-content input[type=submit] {
+  background-color: #0042c0 !important;
+}
+
+.nf-field-element > input,
+.nf-field-element > textarea {
+  border-radius: 5px !important;
+}
+
+/*
+COMMENT FORM 
+*/
+form input,
+textarea#comment {
+  min-height: 2em;
+  width: 100%;
+  border-width: 0;
+  border-radius: 5px;
+  box-sizing: border-box;
+  font-family: inherit;
+  font-size: 0.75em;
+  border: 2px solid lightgrey;
+  padding: 0.25em;
+}
+form input:focus,
+textarea#comment:focus {
+  border: 2px solid #3a47d5;
+}
+
+div.comments ul {
+  list-style-type: none;
+  padding: 0;
+}
+div.comments ul li {
+  margin: 0;
+  background-color: white;
+  border-radius: 5px;
+}
+div.comments ul li .comment-author {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.25em;
+}
+div.comments ul li .comment-author .avatar,
+div.comments ul li .comment-author .fn {
+  margin: 0.1em 0.2em 0 0;
+}
+div.comments ul li .comment-author .says {
+  display: none;
+}
+div.comments ul li .comment-body {
+  padding: 0.5em;
+}
+div.comments ul li .comment-body div.reply {
+  padding: 0.5em 0;
+}
+div.comments ul li .comment-body div.reply a.comment-reply-link {
+  border-radius: 5px;
+  padding: 0.5em;
+  text-decoration: none;
+  background-color: whitesmoke;
+}
+div.comments ul li .comment-body div.comment-meta a {
+  text-decoration: none;
+  font-size: 0.6em;
 }
 
 /*
@@ -762,8 +799,12 @@ p {
     line-height: 1.4em;
   }
 
+  .comment-respond {
+    border-radius: 5px;
+  }
   .comment-respond textarea {
     width: 90%;
+    border-radius: 5px;
   }
 }
 @media only screen and (min-width: 1024px) {

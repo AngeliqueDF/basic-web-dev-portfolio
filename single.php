@@ -16,27 +16,23 @@
                                     <?php// the_post_thumbnail(); ?>
                                 <!-- </div> -->
                                 <h1><?php the_title(); ?></h1>
-                                <?php the_category(); ?>
-                                <?php the_date(); ?>
-                                <br />
-                                <?php the_author(); ?>
-                                <?php $fields = get_field_objects(); ?>
-                                    <?php if( $fields ): ?>
-                                    <ul class="projects-external-links">
-                                            <?php foreach( $fields as $field ): ?>
-                                                <?php if($field['value'] != ''): ?>
-                                                    <li><a href="<?php echo $field['value']; ?>"><?php echo $field['label']; ?></a></li>
-                                                <?php endif; ?>
-                                            <?php endforeach; ?>
-                                                </ul>
-                                    <?php endif; ?>
+                                <div class="meta">
+                                    <?php the_category(); ?>
+                                    <p><?php the_date(); ?></p>
+                                    <p><?php the_author(); ?></p>
+                                    <?php get_template_part('links-to-code-demos');?> 
+                                </div>
                             </header>
                             <?php wp_link_pages(); ?>
-                            <?php the_content(); ?>
+
+                            <div class="main-article-content">
+                                <?php the_content(); ?>
+                            </div>
+                                
                             <?php wp_link_pages(); ?>
 
                             <footer>
-                            <p><?php the_author_posts_link(); ?></p>
+                            <!-- <p><?php //the_author_posts_link(); ?></p> -->
                                 <div class="post-tags">
                                     <?php the_tags('<ul><li>', '</li><li>', '</li></ul>'); ?>
                                 </div>

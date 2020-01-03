@@ -12,6 +12,7 @@ Text Domain: basicwebdevportfolio
 // $cerulean-blue: #3a47d5;
 $cobalt: #0042c0;
 $active-link: #00d2ff;
+$carrot-orange: #f27818;
 
 html {
   box-sizing: border-box;
@@ -19,7 +20,7 @@ html {
   background-color: white;
   word-wrap: break-word;
   font-family: "Inter", serif;
-  font-feature-settings: "ss01" 1, "ss02" 1, "ss03" 1;
+  font-feature-settings: "ss01" 1, "ss02" 1, "ss03" 1, "liga" 1;
   font-size: 20px;
 }
 body {
@@ -31,7 +32,7 @@ body {
 .blog,
 .single,
 .archive,
-category{
+category {
   margin-top: 3em;
 }
 main {
@@ -44,9 +45,10 @@ img {
 div.page article {
   padding: 1em;
 }
-section{
+section {
   padding: 0.5em;
 }
+
 /*
 *LINKS
 */
@@ -60,6 +62,9 @@ a {
   &:hover {
     text-decoration: none;
   }
+}
+a[href*="//"]:not([href*="adf.dev"])::after {
+  content: " ↗ ";
 }
 .main-footer nav ul li a {
   text-decoration: none;
@@ -114,7 +119,7 @@ h1.site-name {
     margin: 1em auto;
     li {
       margin-bottom: 0.5em;
-      a{
+      a {
         color: $cobalt;
         font-size: 2em;
       }
@@ -130,7 +135,7 @@ h1.site-name {
   justify-content: space-around;
   align-content: center;
 }
-.header-nav li a:active{
+.header-nav li a:active {
   background-color: $cobalt;
   color: white;
 }
@@ -151,7 +156,7 @@ h1.site-name {
 .main-footer {
   padding: 2em;
 }
-section.hero{
+section.hero {
   color: white;
   background-color: $cobalt;
   padding: 0.5em 1em;
@@ -183,7 +188,7 @@ span.page-numbers {
   text-align: center;
   margin-top: 4.5em;
   a {
-    background-color: lightgray;
+    background-color: whitesmoke;
     padding: 0.2em 0.3em;
     border-radius: 2px;
     text-decoration: none;
@@ -198,29 +203,32 @@ span.page-numbers {
     }
   }
 }
-
+div.meta {
+  border-bottom: 1px solid whitesmoke;
+  & > * {
+    color: lightgrey;
+    margin: 0;
+  }
+}
 .skills ul {
-  @include horizontal-list(flex-start);
-  padding-left: 0;
+  padding-left: 1em;
   list-style: none;
-  flex-wrap: wrap;
-  li{
+  font-weight: 500;
+  li {
     margin: 0.1em;
-    // list-style-type: none;
-    display: inline;
-    background-color: $cobalt;
-    color: white;
+    list-style-type: none;
+    color: $carrot-orange;
     padding: 5px 10px;
-    &::before{
+    &::before {
       content: "✓ ";
     }
     &:hover {
-    background-color: white;
-    color: $cobalt;
-    text-decoration-color: white;
-    transition: background-color 100ms linear;
-    transition: color 100ms linear;
-  }
+      background-color: white;
+      color: $cobalt;
+      text-decoration-color: white;
+      transition: background-color 100ms linear;
+      transition: color 100ms linear;
+    }
   }
 }
 .project-type {
@@ -228,7 +236,6 @@ span.page-numbers {
   font-size: 0.85em;
   font-weight: 400;
 }
-
 
 //archive loop articles
 body.archive > main article {
@@ -243,7 +250,7 @@ body.archive > main article {
 article {
   flex-basis: 100%;
   border: 1px solid lightgray;
-  border-radius: 3px;
+  border-radius: 5px;
   .post-categories li a {
     font-size: 0.85em;
   }
@@ -260,6 +267,7 @@ article {
     list-style-type: none;
     padding: 0;
     flex-wrap: wrap;
+    margin-bottom: 1em;
     li {
       margin: 0.5em 0.5em 0.5em 0;
     }
@@ -278,12 +286,24 @@ article {
   text-decoration: none;
 }
 .projects-external-links {
-  padding: 0;
+  padding: 0.5em 0;
   list-style: none;
   display: flex;
   align-content: space-between;
+  text-decoration: none;
   li {
     margin-right: 0.25em;
+    a {
+      color: black;
+      background: whitesmoke;
+      padding: 5px;
+      border-radius: 5px;
+      text-decoration: none;
+      &:hover{
+        background-color: black;
+        color: whitesmoke;
+      }
+    }
   }
 }
 
@@ -397,74 +417,6 @@ a img.aligncenter {
   /* Above WP toolbar. */
 }
 /*
-CONTACT FORM
-*/
-.nf-form-layout label{
-  color: $cobalt;
-}
-.nf-form-content button, 
-.nf-form-content input[type="button"], 
-.nf-form-content input[type="submit"]{
-  background-color: $cobalt !important;
-}
-/*
-COMMENT FORM 
-*/
-
-form input,
-textarea#comment {
-  min-height: 2em;
-  width: 100%;
-  border-width: 0;
-  // border-radius: 3px;
-  box-sizing: border-box;
-  font-family: inherit;
-  font-size: 0.75em;
-  border: 2px solid lightgrey;
-  padding: 0.25em;
-  &:focus {
-    border: 2px solid #3a47d5;
-  }
-}
-
-div.comments ul {
-  list-style-type: none;
-  padding: 0;
-  li {
-    margin: 0;
-    background-color: white;
-    .comment-author {
-      display: flex;
-      align-items: center;
-      margin-bottom: 0.25em;
-      .avatar,
-      .fn {
-        margin: 0.1em 0.2em 0 0;
-      }
-      .says {
-        display: none;
-      }
-    }
-    .comment-body {
-      padding: 0.5em;
-      div.reply {
-        padding: 0.5em 0;
-        a.comment-reply-link {
-          // color: white;
-          padding: 0.5em;
-          text-decoration: none;
-          // color: black;
-          background-color: lightgray;
-        }
-      }
-      div.comment-meta a {
-        text-decoration: none;
-        font-size: 0.6em;
-      }
-    }
-  }
-}
-/*
 CONTENT
 */
 //post titles
@@ -474,31 +426,33 @@ article header h3 a {
   color: $cobalt;
 }
 article header .post-categories {
-    list-style-type: none;
-    padding: 0;
-    text-transform: uppercase;
-  }
+  list-style-type: none;
+  padding: 0;
+  text-transform: uppercase;
+  margin: 0;
+}
 div.post-tags a {
-  color: white;
-  background-color: $cobalt;
   padding: 5px 10px;
   text-decoration-color: white;
-  &:hover {
-    background-color: white;
-    color: $cobalt;
-    text-decoration-color: white;
-    transition: background-color 100ms linear;
-    transition: color 100ms linear;
-  }
+  border: 1px solid;
+  padding: 5px 10px;
+  text-decoration-color: white;
+  border-radius: 5px;
+  background-color: $cobalt;
+  color: white;
   &:active {
     color: $active-link;
-    transition: color 100ms linear;
+  }
+  &:hover {
+    color: $cobalt;
+    background-color: white;
+    transition: background-color 100ms linear;
   }
 }
 
 .sticky {
   margin-bottom: 5em;
-  border-radius: 3px;
+  border-radius: 5px;
   border: 2px solid #ffc300;
   &:hover {
     border-color: #ffc300;
@@ -511,6 +465,10 @@ div.post-tags a {
   }
   p {
     line-height: 1.7em;
+  }
+  div.main-article-content {
+    border-bottom: 1px solid whitesmoke;
+    margin: 0 0 2em 0;
   }
 }
 /*
@@ -541,7 +499,7 @@ COMMENT FORM
 }
 .comment-respond textarea {
   border: 2px solid lightgrey;
-  border-radius: 3px;
+  border-radius: 5px;
   width: 90%;
   font-family: inherit;
   margin: 0 auto;
@@ -555,12 +513,82 @@ COMMENT FORM
 }
 #submit {
   background-color: $cobalt;
+  border-radius: 5px;
 }
-
+/*
+CONTACT FORM
+*/
+.nf-form-layout label {
+  color: $cobalt;
+}
+.nf-form-content button,
+.nf-form-content input[type="button"],
+.nf-form-content input[type="submit"] {
+  background-color: $cobalt !important;
+}
+.nf-field-element > input,
+.nf-field-element > textarea {
+  border-radius: 5px !important;
+}
+/*
+COMMENT FORM 
+*/
+form input,
+textarea#comment {
+  min-height: 2em;
+  width: 100%;
+  border-width: 0;
+  border-radius: 5px;
+  box-sizing: border-box;
+  font-family: inherit;
+  font-size: 0.75em;
+  border: 2px solid lightgrey;
+  padding: 0.25em;
+  &:focus {
+    border: 2px solid #3a47d5;
+  }
+}
+div.comments ul {
+  list-style-type: none;
+  padding: 0;
+  li {
+    margin: 0;
+    background-color: white;
+    border-radius: 5px;
+    .comment-author {
+      display: flex;
+      align-items: center;
+      margin-bottom: 0.25em;
+      .avatar,
+      .fn {
+        margin: 0.1em 0.2em 0 0;
+      }
+      .says {
+        display: none;
+      }
+    }
+    .comment-body {
+      padding: 0.5em;
+      div.reply {
+        padding: 0.5em 0;
+        a.comment-reply-link {
+          border-radius: 5px;
+          padding: 0.5em;
+          text-decoration: none;
+          background-color: whitesmoke;
+        }
+      }
+      div.comment-meta a {
+        text-decoration: none;
+        font-size: 0.6em;
+      }
+    }
+  }
+}
 /*
 FOOTER
 */
-.main-footer{
+.main-footer {
   text-align: center;
 }
 .site-created-by {
@@ -585,8 +613,12 @@ FOOTER
   p {
     line-height: 1.4em;
   }
-  .comment-respond textarea {
-    width: 90%;
+  .comment-respond {
+    border-radius: 5px;
+    textarea {
+      width: 90%;
+      border-radius: 5px;
+    }
   }
 }
 @media only screen and (min-width: 1024px) {
@@ -594,7 +626,7 @@ FOOTER
   .blog,
   .single,
   .archive,
-  .page-template-default{
+  .page-template-default {
     margin-top: 2em;
   }
   .archive .container,
@@ -603,7 +635,7 @@ FOOTER
   .page .container {
     width: 50%;
   }
-  .main-header{
+  .main-header {
     padding: 0 3em;
   }
   .main-header .site-name {
@@ -623,12 +655,12 @@ FOOTER
     li {
       margin: 0;
       margin-left: 0.5em;
-      a{
+      a {
         font-size: 1.2em;
       }
     }
   }
-  section.hero{
+  section.hero {
     font-size: 1.2em;
     height: 30vh;
     padding: 3em 4em 3em;

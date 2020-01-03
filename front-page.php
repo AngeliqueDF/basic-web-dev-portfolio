@@ -17,7 +17,7 @@
                     <li>MySQL</li>
                     <li>PHP</li>
                 </ul>
-                
+
                 <h3>Outils</h3>
                 <ul>
                     <li>Sass</li>
@@ -48,20 +48,10 @@
                     <!-- include template parts according to post format -->
                     <article id="post-<?php the_ID(); ?>" <?php post_class('project'); ?>>
                         <header>
-                            <p class="project-type"><?php the_category(); ?></p>
+                            <div class="project-type"><?php the_category(); ?></div>
 
                             <h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
-                            <div class="project-links">
-                                <?php
-                                $fields = get_field_objects();
-                                if( $fields ): ?>
-                                        <?php foreach( $fields as $field ): ?>
-                                            <?php if($field['value'] != ''): ?>
-                                                <a href="<?php echo $field['value']; ?>"><?php echo $field['label']; ?></a>
-                                            <?php endif; ?>
-                                        <?php endforeach; ?>
-                                <?php endif; ?>
-                            </div>
+                            <?php get_template_part('links-to-code-demos');?>
                         </header>
 
                         <footer>
