@@ -813,6 +813,7 @@ p {
   }
 
   section.hero {
+    font-size: 1.2em;
     height: 30vh;
     padding: 3em 4em 3em;
   }
