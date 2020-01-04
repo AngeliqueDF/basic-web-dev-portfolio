@@ -20,7 +20,7 @@
                                     <?php the_category(); ?>
                                     <p><?php the_date(); ?></p>
                                     <p><?php the_author(); ?></p>
-                                    <?php get_template_part('links-to-code-demos');?> 
+                                    <?php get_template_part('links-to-code-demos');?>
                                 </div>
                             </header>
                             <?php wp_link_pages(); ?>

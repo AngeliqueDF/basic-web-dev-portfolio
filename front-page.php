@@ -7,28 +7,6 @@
     </section>
 
     <div class="container">
-        <section class="skills">
-            <h2>Compétences</h2>
-                <h3>Langages</h3>
-                <ul>
-                    <li>HTML</li>
-                    <li>CSS</li>
-                    <li>JavaScript</li>
-                    <li>MySQL</li>
-                    <li>PHP</li>
-                </ul>
-
-                <h3>Outils</h3>
-                <ul>
-                    <li>Sass</li>
-                    <li>Git</li>
-                </ul>
-
-            <small><a href="3">Github</a></small>
-        </section>
-    </div>
-
-    <div class="container">
         <section class="projects">
         <h2>Réalisations</h2>
         <div class="projects-list">
@@ -60,6 +38,7 @@
                                 <?php the_tags('<ul><li>', '</li><li>', '</li></ul>');
                                         } ?>
                             </div>
+                            <p class="article-author"><small><?php the_author_posts_link(); ?></small></p>
                         </footer>
                     </article>
             <?php } // end while
@@ -71,6 +50,29 @@
 
         </section>
     </div>
+
+    <div class="container">
+        <section class="skills">
+            <h2>Compétences</h2>
+                <h3>Langages</h3>
+                <ul>
+                    <li>HTML</li>
+                    <li>CSS</li>
+                    <li>JavaScript</li>
+                    <li>MySQL</li>
+                    <li>PHP</li>
+                </ul>
+
+                <h3>Outils</h3>
+                <ul>
+                    <li>Sass</li>
+                    <li>Git</li>
+                </ul>
+
+            <p><a href="https://github.com/angelique-df/">Github</a></p>
+        </section>
+    </div>
+
 </main>
 
 <?php get_footer(); ?>

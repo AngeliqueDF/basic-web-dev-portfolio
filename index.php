@@ -19,16 +19,9 @@ get_header();
                         <?php the_category(); ?>
 
                         <h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
-                        <p class="article-author"><small><?php the_author_posts_link(); ?></small></p>
                         <?php $fields = get_field_objects(); ?>
                         <?php if( $fields ): ?>
-                        <p>
-                                <?php foreach( $fields as $field ): ?>
-                                    <?php if($field['value'] != ''): ?>
-                                        <a href="<?php echo $field['value']; ?>"><?php echo $field['label']; ?></a>
-                                    <?php endif; ?>
-                                <?php endforeach; ?>
-                        </p>
+                        <?php get_template_part('links-to-code-demos');?>
                         <?php endif; ?>
                     </header>
 
@@ -36,6 +29,7 @@ get_header();
                         <div class="post-tags">
                             <?php the_tags('<ul><li>', '</li><li>', '</li></ul>'); ?>
                         </div>
+                        <p class="article-author"><small><?php the_author_posts_link(); ?></small></p>
                     </footer>
                 </article>
 

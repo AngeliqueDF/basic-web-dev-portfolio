@@ -1,24 +1,9 @@
-$blue: #0097ec;
-$grey: #1d242b;
-$link-underline: #0077c0;
+//colors
 
 /*
 Text
 */
 //titles
-@mixin title-color($color: black) {
-  color: $color;
-  opacity: 0.75;
-  &:hover {
-    opacity: 1;
-  }
-}
-@mixin text-color {
-  color: $color;
-  opacity: 0.8;
-  font-size: 1.1em;
-  line-height: 1.5em;
-}
 //content text
 
 /* 
@@ -27,11 +12,6 @@ LINKS
 
 //category (card)
 //internal
-@mixin internal-links {
-  color: $grey;
-  opacity: 0.9;
-  text-decoration-color: $link-underline;
-}
 //tags
 
 //external

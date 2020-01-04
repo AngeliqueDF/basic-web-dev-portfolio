@@ -153,7 +153,6 @@ html {
   word-wrap: break-word;
   font-family: "Inter", serif;
   font-feature-settings: "ss01" 1, "ss02" 1, "ss03" 1, "liga" 1;
-  font-size: 20px;
 }
 
 body {
@@ -202,7 +201,7 @@ a:hover {
 }
 
 a[href*="//"]:not([href*="adf.dev"])::after {
-  content: " ↗ ";
+  content: " ↗ " !important;
 }
 
 .main-footer nav ul li a {
@@ -345,6 +344,7 @@ span.page-numbers {
   border-radius: 2px;
   text-decoration: none;
   font-size: 0.8em;
+  display: inline-block;
 }
 .breadcrumbs a:hover, .breadcrumbs a:active {
   background-color: white;
@@ -370,15 +370,14 @@ div.meta > * {
 .skills ul li {
   margin: 0.1em;
   list-style-type: none;
-  color: #f27818;
   padding: 5px 10px;
+  color: #0042c0;
 }
 .skills ul li::before {
   content: "✓ ";
 }
 .skills ul li:hover {
   background-color: white;
-  color: #0042c0;
   text-decoration-color: white;
   transition: background-color 100ms linear;
   transition: color 100ms linear;
@@ -403,7 +402,7 @@ body.archive > main article {
 .project,
 article {
   flex-basis: 100%;
-  border: 1px solid lightgray;
+  border: 1px solid whitesmoke;
   border-radius: 5px;
 }
 .project .post-categories li a,
@@ -600,8 +599,6 @@ article header .post-categories {
 }
 
 div.post-tags a {
-  padding: 5px 10px;
-  text-decoration-color: white;
   border: 1px solid;
   padding: 5px 10px;
   text-decoration-color: white;
@@ -609,10 +606,7 @@ div.post-tags a {
   background-color: #0042c0;
   color: white;
 }
-div.post-tags a:active {
-  color: #00d2ff;
-}
-div.post-tags a:hover {
+div.post-tags a:active, div.post-tags a:hover {
   color: #0042c0;
   background-color: white;
   transition: background-color 100ms linear;
@@ -661,6 +655,7 @@ COMMENT FORM
 .comment-respond {
   padding: 1em;
   margin-bottom: 1em;
+  border-radius: 5px;
 }
 
 .comment-respond label {
@@ -855,7 +850,7 @@ p {
 
   section.hero {
     font-size: 1.2em;
-    height: 30vh;
+    height: 20vh;
     padding: 3em 4em 3em;
   }
 
