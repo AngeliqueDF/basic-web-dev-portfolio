@@ -335,7 +335,6 @@ span.page-numbers {
 }
 
 .breadcrumbs {
-  text-align: center;
   margin-top: 4.5em;
 }
 .breadcrumbs a {
@@ -352,6 +351,15 @@ span.page-numbers {
 }
 .breadcrumbs a:active {
   color: #00d2ff;
+}
+
+.lang-container {
+  padding: 0;
+}
+.lang-container .lang-item {
+  list-style: none;
+  display: flex;
+  justify-content: flex-start;
 }
 
 div.meta {

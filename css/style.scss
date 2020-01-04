@@ -12,7 +12,8 @@ Text Domain: basicwebdevportfolio
 // $cerulean-blue: #3a47d5;
 $cobalt: #0042c0;
 $active-link: #00d2ff;
-$carrot-orange: #f27818;
+// $carrot-orange: #f27818;
+$round-borders: 5px;
 
 html {
   box-sizing: border-box;
@@ -184,7 +185,7 @@ span.page-numbers {
   font-size: 1em;
 }
 .breadcrumbs {
-  text-align: center;
+  // text-align: center;
   margin-top: 4.5em;
   a {
     background-color: whitesmoke;
@@ -201,6 +202,13 @@ span.page-numbers {
     &:active {
       color: $active-link;
     }
+  }
+}
+.lang-container{
+  padding: 0;
+  .lang-item {
+    list-style: none;
+    @include horizontal-list(flex-start);
   }
 }
 div.meta {
@@ -249,7 +257,7 @@ body.archive > main article {
 article {
   flex-basis: 100%;
   border: 1px solid whitesmoke;
-  border-radius: 5px;
+  border-radius: $round-borders;
   .post-categories li a {
     font-size: 0.85em;
   }
@@ -296,7 +304,7 @@ article {
       color: black;
       background: whitesmoke;
       padding: 5px;
-      border-radius: 5px;
+      border-radius: $round-borders;
       text-decoration: none;
       &:hover{
         background-color: black;
@@ -434,7 +442,7 @@ div.post-tags a {
   border: 1px solid;
   padding: 5px 10px;
   text-decoration-color: white;
-  border-radius: 5px;
+  border-radius: $round-borders;
   background-color: $cobalt;
   color: white;
   &:active,
@@ -447,7 +455,7 @@ div.post-tags a {
 
 .sticky {
   margin-bottom: 5em;
-  border-radius: 5px;
+  border-radius: $round-borders;
   border: 2px solid #ffc300;
   &:hover {
     border-color: #ffc300;
@@ -484,18 +492,18 @@ COMMENT FORM
 .comment-respond {
   padding: 1em;
   margin-bottom: 1em;
-  border-radius: 5px;
+  border-radius: $round-borders;
 }
 
 .comment-respond label {
   display: block;
-  color: #0042c0;
+  color: $cobalt;
   font-size: 0.8em;
   font-weight: 300;
 }
 .comment-respond textarea {
   border: 2px solid lightgrey;
-  border-radius: 5px;
+  border-radius: $round-borders;
   width: 90%;
   font-family: inherit;
   margin: 0 auto;
@@ -509,7 +517,7 @@ COMMENT FORM
 }
 #submit {
   background-color: $cobalt;
-  border-radius: 5px;
+  border-radius: $round-borders;
 }
 /*
 CONTACT FORM
@@ -534,7 +542,7 @@ textarea#comment {
   min-height: 2em;
   width: 100%;
   border-width: 0;
-  border-radius: 5px;
+  border-radius: $round-borders;
   box-sizing: border-box;
   font-family: inherit;
   font-size: 0.75em;
@@ -550,7 +558,7 @@ div.comments ul {
   li {
     margin: 0;
     background-color: white;
-    border-radius: 5px;
+    border-radius: $round-borders;
     .comment-author {
       display: flex;
       align-items: center;
@@ -568,7 +576,7 @@ div.comments ul {
       div.reply {
         padding: 0.5em 0;
         a.comment-reply-link {
-          border-radius: 5px;
+          border-radius: $round-borders;
           padding: 0.5em;
           text-decoration: none;
           background-color: whitesmoke;
@@ -610,10 +618,10 @@ FOOTER
     line-height: 1.4em;
   }
   .comment-respond {
-    border-radius: 5px;
+    border-radius: $round-borders;
     textarea {
       width: 90%;
-      border-radius: 5px;
+      border-radius: $round-borders;
     }
   }
 }

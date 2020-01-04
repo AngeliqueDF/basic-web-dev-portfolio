@@ -54,6 +54,10 @@
     <div class="container">
         <section class="skills">
             <h2>Compétences</h2>
+                <h3>Certifications</h3>
+                <ul>
+                    <li>Opquast, la certification des professionnels du Web.</li>
+                </ul>
                 <h3>Langages</h3>
                 <ul>
                     <li>HTML</li>

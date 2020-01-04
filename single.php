@@ -16,6 +16,20 @@
                                     <?php// the_post_thumbnail(); ?>
                                 <!-- </div> -->
                                 <h1><?php the_title(); ?></h1>
+
+                                <ul class="lang-container">
+                                    <?php
+                                        $args = array(
+                                            "show_names" => 1,
+                                            "show_flags" => 1,
+                                            "hide_current"=> 1,
+                                            "hide_if_no_translation" => 1
+                                    );
+
+                                        pll_the_languages($args);
+                                    ?>
+                                </ul>
+
                                 <div class="meta">
                                     <?php the_category(); ?>
                                     <p><?php the_date(); ?></p>
