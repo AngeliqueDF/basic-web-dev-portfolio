@@ -344,6 +344,7 @@ span.page-numbers {
   text-decoration: none;
   font-size: 0.8em;
   display: inline-block;
+  margin: 0.2em;
 }
 .breadcrumbs a:hover, .breadcrumbs a:active {
   background-color: white;

@@ -19,7 +19,20 @@
                                     <?php the_category(); ?>
                                     <p><?php the_date(); ?></p>
                                     <p><?php the_author(); ?></p>
-                                    <?php get_template_part('links-to-code-demos');?>
+                                    
+                                    <?php 
+
+                                    $fields = get_field_objects(); 
+
+                                    if( $fields["lien-apercu-github"]["value"] || $fields["lien-apercu-codepen"]["value"] || $fields["lien-demo"]["value"] ){
+                                        echo '<ul class="projects-external-links">';
+                                        foreach( $fields as $field ): ?>
+                                            <?php if($field['value']): ?>
+                                                <li><a href="<?php echo $field['value']; ?>"><?php echo $field['label']; ?></a></li>
+                                            <?php endif;
+                                        endforeach;
+                                        echo "</ul>"; ?>
+                                    <?php } ?> 
                                 </div>
 
                                 <ul class="lang-container">
