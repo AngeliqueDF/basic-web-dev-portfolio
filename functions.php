@@ -4,7 +4,7 @@ function add_theme_styles(){
     // Get last modified timestamp of style.css file
     $last_modified_css_time = strval(filemtime( get_template_directory() . '/style.css' ));
 
-    wp_enqueue_style('style', get_stylesheet_uri(), array(), $last_modified_css_time, all);
+    wp_enqueue_style('style', get_stylesheet_uri(), array(), $last_modified_css_time, "all");
     wp_enqueue_style('hamburgers.min', get_theme_file_uri( '/css/hamburgers.min.css' ));
 }
 add_action('wp_enqueue_scripts', 'add_theme_styles');
@@ -14,7 +14,7 @@ function add_theme_scripts(){
     // Get last modified timestamp of /js/script.js file
     $last_modified_js_time = strval(filemtime( get_template_directory('/js/script.js' )));
 
-    wp_enqueue_script('script', get_theme_file_uri('/js/script.js'), array(), $last_modified_js_time, all, false);
+    wp_enqueue_script('script', get_theme_file_uri('/js/script.js'), array(), $last_modified_js_time, "all", false);
 }
 add_action('wp_footer', 'add_theme_scripts');
 

@@ -12,9 +12,6 @@
                     <div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
                         <article class="post-content">
                             <header>
-                                <!-- <div class="thumbnail-container"> -->
-                                    <?php// the_post_thumbnail(); ?>
-                                <!-- </div> -->
 
                                 <h1><?php the_title(); ?></h1>
 
