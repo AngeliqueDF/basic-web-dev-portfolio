@@ -43,7 +43,7 @@ function the_breadcrumb() {
             } elseif ( is_year() ) {
                 printf( __( '%s', 'text_domain' ), get_the_date( _x( 'Y', 'yearly archives date format', 'text_domain' ) ) );
             } else {
-                _e( 'Blog Archives', 'text_domain' );
+                _e( 'Archive', 'text_domain' );
             }
         }
 	

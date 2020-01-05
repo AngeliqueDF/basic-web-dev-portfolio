@@ -361,6 +361,13 @@ span.page-numbers {
   display: flex;
   justify-content: flex-start;
 }
+.lang-container .lang-item a {
+  color: gray;
+  text-decoration-color: grey;
+}
+.lang-container .lang-item a:active {
+  color: black;
+}
 
 div.meta {
   border-bottom: 1px solid whitesmoke;
@@ -407,6 +414,11 @@ body.archive > main article {
   margin: 0.5em;
 }
 
+.single .post-categories a {
+  font-size: 1em;
+  font-weight: 500;
+}
+
 .project,
 article {
   flex-basis: 100%;
@@ -415,7 +427,7 @@ article {
 }
 .project .post-categories li a,
 article .post-categories li a {
-  font-size: 0.85em;
+  font-size: 1em;
 }
 .project .post-categories li a,
 .project .article-author small a,
@@ -476,6 +488,10 @@ article footer ul li {
 .projects-external-links li a:hover {
   background-color: black;
   color: whitesmoke;
+}
+.projects-external-links li a:active {
+  background-color: white;
+  color: #0042c0;
 }
 
 /* =WordPress Core
@@ -614,7 +630,11 @@ div.post-tags a {
   background-color: #0042c0;
   color: white;
 }
-div.post-tags a:active, div.post-tags a:hover {
+div.post-tags a:active {
+  background-color: #0042c0;
+  color: white;
+}
+div.post-tags a:hover {
   color: #0042c0;
   background-color: white;
   transition: background-color 100ms linear;
@@ -641,6 +661,7 @@ div.post-tags a:active, div.post-tags a:hover {
 .post-content div.main-article-content {
   border-bottom: 1px solid whitesmoke;
   margin: 0 0 2em 0;
+  font-size: 1.2em;
 }
 
 /*
@@ -844,9 +865,11 @@ p {
   }
 
   .header-nav .menu {
+    text-align: initial;
     flex-direction: row;
     margin: 0;
     justify-content: flex-end;
+    display: flex;
   }
   .header-nav .menu li {
     margin: 0;

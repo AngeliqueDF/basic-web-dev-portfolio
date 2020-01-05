@@ -209,6 +209,13 @@ span.page-numbers {
   .lang-item {
     list-style: none;
     @include horizontal-list(flex-start);
+    a{
+      color:gray;
+      text-decoration-color: grey;
+      &:active{
+        color: black;
+      }
+    }
   }
 }
 div.meta {
@@ -253,13 +260,17 @@ body.archive > main article {
   padding: 1em;
   margin: 0.5em;
 }
+.single .post-categories a{
+  font-size: 1em;
+  font-weight: 500;
+}
 .project,
 article {
   flex-basis: 100%;
   border: 1px solid whitesmoke;
   border-radius: $round-borders;
   .post-categories li a {
-    font-size: 0.85em;
+    font-size: 1em;
   }
   .post-categories li a,
   .article-author small a,
@@ -309,6 +320,10 @@ article {
       &:hover{
         background-color: black;
         color: whitesmoke;
+      }
+      &:active{
+        background-color: white;
+        color: $cobalt;
       }
     }
   }
@@ -445,7 +460,10 @@ div.post-tags a {
   border-radius: $round-borders;
   background-color: $cobalt;
   color: white;
-  &:active,
+  &:active{
+    background-color: $cobalt;
+    color: white;
+  }
   &:hover {
     color: $cobalt;
     background-color: white;
@@ -472,6 +490,7 @@ div.post-tags a {
   div.main-article-content {
     border-bottom: 1px solid whitesmoke;
     margin: 0 0 2em 0;
+    font-size: 1.2em;
   }
 }
 /*
@@ -653,9 +672,11 @@ FOOTER
     flex-basis: 50%;
   }
   .header-nav .menu {
+    text-align: initial;
     flex-direction: row;
     margin: 0;
     justify-content: flex-end;
+    display: flex;
     li {
       margin: 0;
       margin-left: 0.5em;

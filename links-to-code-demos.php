@@ -1,4 +1,7 @@
-<?php $fields = get_field_objects(); 
+<?php 
+
+$fields = get_field_objects(); 
+
 if( $fields["lien-apercu-github"]["value"] || $fields["lien-apercu-codepen"]["value"] || $fields["lien-demo"]["value"] ){
     echo '<ul class="projects-external-links">';
     foreach( $fields as $field ): ?>
