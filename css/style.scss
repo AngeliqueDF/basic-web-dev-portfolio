@@ -4,15 +4,14 @@ Author: Angélique Faye
 Version: 1.0
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
-Text Domain: basicwebdevportfolio
+Text Domain: basic-web-dev-portfolio
 */
 @import "_fonts.scss";
 @import "_utilities.scss";
 
-// $cerulean-blue: #3a47d5;
-$cobalt: #0042c0;
+
+$cerulean-blue: #0042c0;
 $active-link: #00d2ff;
-// $carrot-orange: #f27818;
 $round-borders: 5px;
 
 html {
@@ -55,7 +54,7 @@ section {
 
 a {
   color: black;
-  text-decoration-color: $cobalt;
+  text-decoration-color: $cerulean-blue;
   &:active {
     color: $active-link;
   }
@@ -65,10 +64,13 @@ a {
 }
 a[href*="//"]:not([href*="adf.dev"])::after {
   content: " ↗ " !important;
+  text-decoration-color: $cerulean-blue;
+  display: inline-block;
+
 }
 .main-footer nav ul li a {
   text-decoration: none;
-  font-size: 1.5em;
+  font-size: 1.2em;
 }
 
 /*
@@ -111,19 +113,35 @@ h1.site-name {
     font-weight: 400;
   }
 }
+.main-header {
+  z-index: 2;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+}
 .header-nav {
   z-index: 2;
   flex-basis: 100%;
   .menu {
     text-align: center;
-    margin: 1em auto;
-    li {
-      margin-bottom: 0.5em;
-      a {
-        color: $cobalt;
-        font-size: 2em;
+    // margin: 1em auto;
+    margin: 0;
+       li {
+        margin-bottom: 0.5em;
+        a {
+          font-size: 2em;
+          text-decoration: underline;
+          font-weight: 500;
+          color: $cerulean-blue;
+          &:hover,
+          &:active{
+            color: $cerulean-blue;
+            background-color: white;
+            text-decoration: none;
+          }
+        }
       }
-    }
   }
 }
 .header-nav ul,
@@ -135,30 +153,12 @@ h1.site-name {
   justify-content: space-around;
   align-content: center;
 }
-.header-nav li a:active {
-  background-color: $cobalt;
-  color: white;
-}
-.main-header nav ul li a {
-  text-decoration: none;
-  font-weight: 500;
-  &:hover {
-    text-decoration: underline;
-  }
-}
-.main-header {
-  z-index: 2;
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-}
 .main-footer {
   padding: 2em;
 }
 section.hero {
   color: white;
-  background-color: $cobalt;
+  background-color: $cerulean-blue;
   padding: 0.5em 1em;
   height: 30vh;
 }
@@ -166,6 +166,7 @@ section.hero {
 /*
 NAVIGATION
 */
+
 //posts pagination
 span.page-numbers.current,
 span.post-page-numbers.current {
@@ -173,7 +174,7 @@ span.post-page-numbers.current {
   font-weight: bolder;
 }
 span.page-numbers {
-  text-decoration-color: $cobalt;
+  text-decoration-color: $cerulean-blue;
 }
 
 .thumbnail-container {
@@ -185,7 +186,6 @@ span.page-numbers {
   font-size: 1em;
 }
 .breadcrumbs {
-  // text-align: center;
   margin-top: 4.5em;
   a {
     background-color: whitesmoke;
@@ -198,7 +198,7 @@ span.page-numbers {
     &:hover,
     &:active {
       background-color: white;
-      color: $cobalt;
+      color: $cerulean-blue;
     }
     &:active {
       color: $active-link;
@@ -234,7 +234,7 @@ div.meta {
     margin: 0.1em;
     list-style-type: none;
     padding: 5px 10px;
-    color: $cobalt;
+    color: $cerulean-blue;
     &::before {
       content: "✓ ";
     }
@@ -268,7 +268,7 @@ body.archive > main article {
 .project,
 article {
   flex-basis: 100%;
-  border: 1px solid whitesmoke;
+  border: 1px solid lightgrey;
   border-radius: $round-borders;
   .post-categories li a {
     font-size: 1em;
@@ -296,8 +296,6 @@ article {
   display: flex;
   flex-wrap: wrap;
   article {
-    top: 0;
-    transition: top ease 0.25s;
     background-color: white;
   }
 }
@@ -313,7 +311,7 @@ article {
   li {
     margin-right: 0.25em;
     a {
-      color: black;
+      color: grey;
       background: whitesmoke;
       padding: 5px;
       border-radius: $round-borders;
@@ -324,7 +322,7 @@ article {
       }
       &:active{
         background-color: white;
-        color: $cobalt;
+        color: $cerulean-blue;
       }
     }
   }
@@ -442,11 +440,12 @@ a img.aligncenter {
 /*
 CONTENT
 */
+
 //post titles
 article header h2 a,
 article header h3 a {
-  text-decoration-color: $cobalt;
-  color: $cobalt;
+  text-decoration-color: $cerulean-blue;
+  color: $cerulean-blue;
 }
 article header .post-categories {
   list-style-type: none;
@@ -459,14 +458,14 @@ div.post-tags a {
   padding: 5px 10px;
   text-decoration-color: white;
   border-radius: $round-borders;
-  background-color: $cobalt;
+  background-color: $cerulean-blue;
   color: white;
   &:active{
-    background-color: $cobalt;
-    color: white;
+    background-color: white;
+    color: $active-link;
   }
   &:hover {
-    color: $cobalt;
+    color: $cerulean-blue;
     background-color: white;
     transition: background-color 100ms linear;
   }
@@ -480,13 +479,20 @@ div.post-tags a {
     border-color: #ffc300;
   }
 }
-.post-content {
-  border: none;
+.home .post-content,
+.single .post-content {
+  padding: 0em 1em;
+  border: 1px solid whitesmoke;
+  margin-bottom: 1em;
+  border-radius: 5px;
   &:hover {
     box-shadow: none;
   }
   p {
     line-height: 1.7em;
+  }
+  .meta{
+    padding-bottom: 1em;
   }
   div.main-article-content {
     border-bottom: 1px solid whitesmoke;
@@ -494,9 +500,17 @@ div.post-tags a {
     font-size: 1.2em;
   }
 }
+// .single .post-content h1,
+.post-categories a{
+  color: grey;
+}
+.single-post .projects-external-links li a{
+  color: black;
+}
 /*
 COMMENT FORM
 */
+
 .depth-1 {
   border: 1px solid lightgrey;
 }
@@ -517,7 +531,7 @@ COMMENT FORM
 
 .comment-respond label {
   display: block;
-  color: $cobalt;
+  color: $cerulean-blue;
   font-size: 0.8em;
   font-weight: 300;
 }
@@ -536,27 +550,38 @@ COMMENT FORM
   font-size: 1em;
 }
 #submit {
-  background-color: $cobalt;
+  background-color: $cerulean-blue;
   border-radius: $round-borders;
+  &:hover{
+    background-color: #5797CF;
+  }
 }
+
 /*
 CONTACT FORM
 */
+
 .nf-form-layout label {
-  color: $cobalt;
+  color: $cerulean-blue;
 }
 .nf-form-content button,
 .nf-form-content input[type="button"],
 .nf-form-content input[type="submit"] {
-  background-color: $cobalt !important;
+  background-color: $cerulean-blue !important;
+  &:hover{
+    background-color: $active-link !important;
+    color: white !important;
+  }
 }
 .nf-field-element > input,
 .nf-field-element > textarea {
   border-radius: 5px !important;
 }
+
 /*
 COMMENT FORM 
 */
+
 form input,
 textarea#comment {
   min-height: 2em;
@@ -609,20 +634,19 @@ div.comments ul {
     }
   }
 }
+
 /*
 FOOTER
 */
+
 .main-footer {
   text-align: center;
 }
-.site-created-by {
-  text-align: center;
-  a {
+.site-created-by a {
     font-size: 0.75em;
     text-transform: capitalize;
     text-decoration: none;
   }
-}
 
 @media only screen and (min-width: 768px) {
   .container {
@@ -645,6 +669,7 @@ FOOTER
     }
   }
 }
+
 @media only screen and (min-width: 1024px) {
   .home,
   .blog,

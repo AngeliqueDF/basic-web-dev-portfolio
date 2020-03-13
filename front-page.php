@@ -2,8 +2,8 @@
 
 <main>
     <section class="hero">
-        <h1>Bienvenue ! Je suis Angélique,</h1>
-        <p>Développeuse-intégratrice web.</p>
+        <p>Bienvenue ! Je suis Angélique</p>
+        <h1>Développeuse-intégratrice web.</h1>
     </section>
 
     <div class="container">
@@ -17,11 +17,11 @@
                 'category_name' => 'realisations'
             );
             // The Query
-            $the_query = new WP_Query($args);
+            $projects_query = new WP_Query($args);
 
-            if ($the_query->have_posts()) {
-                while ($the_query->have_posts()) {
-                    $the_query->the_post();
+            if ($projects_query->have_posts()) {
+                while ($projects_query->have_posts()) {
+                    $projects_query->the_post();
                     ?>
                     <!-- include template parts according to post format -->
                     <article id="post-<?php the_ID(); ?>" <?php post_class('project'); ?>>
@@ -56,7 +56,7 @@
             <h2>Compétences</h2>
                 <h3>Certifications</h3>
                 <ul>
-                    <li>Opquast, la certification des professionnels du Web.</li>
+                    <li><a href="https://directory.opquast.com/fr/certificat/P0MO5X/">Opquast, la certification des professionnels du Web.</a></li>
                 </ul>
                 <h3>Langages</h3>
                 <ul>

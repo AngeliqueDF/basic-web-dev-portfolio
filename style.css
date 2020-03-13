@@ -5,7 +5,7 @@ Author: Angélique Faye
 Version: 1.0
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
-Text Domain: basicwebdevportfolio
+Text Domain: basic-web-dev-portfolio
 */
 @font-face {
   font-family: "Inter";
@@ -202,11 +202,13 @@ a:hover {
 
 a[href*="//"]:not([href*="adf.dev"])::after {
   content: " ↗ " !important;
+  text-decoration-color: #0042c0;
+  display: inline-block;
 }
 
 .main-footer nav ul li a {
   text-decoration: none;
-  font-size: 1.5em;
+  font-size: 1.2em;
 }
 
 /*
@@ -253,20 +255,35 @@ h1.site-name a {
   font-weight: 400;
 }
 
+.main-header {
+  z-index: 2;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
 .header-nav {
   z-index: 2;
   flex-basis: 100%;
 }
 .header-nav .menu {
   text-align: center;
-  margin: 1em auto;
+  margin: 0;
 }
 .header-nav .menu li {
   margin-bottom: 0.5em;
 }
 .header-nav .menu li a {
-  color: #0042c0;
   font-size: 2em;
+  text-decoration: underline;
+  font-weight: 500;
+  color: #0042c0;
+}
+.header-nav .menu li a:hover, .header-nav .menu li a:active {
+  color: #0042c0;
+  background-color: white;
+  text-decoration: none;
 }
 
 .header-nav ul,
@@ -277,27 +294,6 @@ h1.site-name a {
   list-style-type: none;
   justify-content: space-around;
   align-content: center;
-}
-
-.header-nav li a:active {
-  background-color: #0042c0;
-  color: white;
-}
-
-.main-header nav ul li a {
-  text-decoration: none;
-  font-weight: 500;
-}
-.main-header nav ul li a:hover {
-  text-decoration: underline;
-}
-
-.main-header {
-  z-index: 2;
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
 }
 
 .main-footer {
@@ -423,7 +419,7 @@ body.archive > main article {
 .project,
 article {
   flex-basis: 100%;
-  border: 1px solid whitesmoke;
+  border: 1px solid lightgrey;
   border-radius: 5px;
 }
 .project .post-categories li a,
@@ -460,8 +456,6 @@ article footer ul li {
   flex-wrap: wrap;
 }
 .projects-list article {
-  top: 0;
-  transition: top ease 0.25s;
   background-color: white;
 }
 
@@ -480,7 +474,7 @@ article footer ul li {
   margin-right: 0.25em;
 }
 .projects-external-links li a {
-  color: black;
+  color: grey;
   background: whitesmoke;
   padding: 5px;
   border-radius: 5px;
@@ -632,8 +626,8 @@ div.post-tags a {
   color: white;
 }
 div.post-tags a:active {
-  background-color: #0042c0;
-  color: white;
+  background-color: white;
+  color: #00d2ff;
 }
 div.post-tags a:hover {
   color: #0042c0;
@@ -650,19 +644,38 @@ div.post-tags a:hover {
   border-color: #ffc300;
 }
 
-.post-content {
-  border: none;
+.home .post-content,
+.single .post-content {
+  padding: 0em 1em;
+  border: 1px solid whitesmoke;
+  margin-bottom: 1em;
+  border-radius: 5px;
 }
-.post-content:hover {
+.home .post-content:hover,
+.single .post-content:hover {
   box-shadow: none;
 }
-.post-content p {
+.home .post-content p,
+.single .post-content p {
   line-height: 1.7em;
 }
-.post-content div.main-article-content {
+.home .post-content .meta,
+.single .post-content .meta {
+  padding-bottom: 1em;
+}
+.home .post-content div.main-article-content,
+.single .post-content div.main-article-content {
   border-bottom: 1px solid whitesmoke;
   margin: 0 0 2em 0;
   font-size: 1.2em;
+}
+
+.post-categories a {
+  color: grey;
+}
+
+.single-post .projects-external-links li a {
+  color: black;
 }
 
 /*
@@ -715,6 +728,9 @@ COMMENT FORM
   background-color: #0042c0;
   border-radius: 5px;
 }
+#submit:hover {
+  background-color: #5797CF;
+}
 
 /*
 CONTACT FORM
@@ -727,6 +743,12 @@ CONTACT FORM
 .nf-form-content input[type=button],
 .nf-form-content input[type=submit] {
   background-color: #0042c0 !important;
+}
+.nf-form-content button:hover,
+.nf-form-content input[type=button]:hover,
+.nf-form-content input[type=submit]:hover {
+  background-color: #00d2ff !important;
+  color: white !important;
 }
 
 .nf-field-element > input,
@@ -799,9 +821,6 @@ FOOTER
   text-align: center;
 }
 
-.site-created-by {
-  text-align: center;
-}
 .site-created-by a {
   font-size: 0.75em;
   text-transform: capitalize;

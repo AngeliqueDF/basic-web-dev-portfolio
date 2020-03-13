@@ -3,7 +3,7 @@
 <footer class="main-footer">
     <nav class="footer-nav">
         <?php wp_nav_menu(array(
-            'theme_location' => 'HeaderMenuLocation'
+            'theme_location' => 'FooterMenuLocation'
         ));
         ?>
     </nav>

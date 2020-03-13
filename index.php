@@ -41,8 +41,8 @@ get_header();
         <div class="paginate-links">
             <?php echo paginate_links(
                 $args = array(
-                    'prev_text'          => __('« Page précédente'),
-                    'next_text'          => __('Page suivante »')
+                    'prev_text'          => __('Page précédente', 'basic-web-dev-portfolio'),
+                    'next_text'          => __('Page suivante', 'basic-web-dev-portfolio')
                 )
             ); ?>
         </div>

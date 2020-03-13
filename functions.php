@@ -20,42 +20,39 @@ add_action('wp_footer', 'add_theme_scripts');
 
 //  add breadcrumbs
 function the_breadcrumb() {
-    $sep = ' / ';
+    $sep = esc_html(' / ');
     if (!is_front_page()) {
 	
 	// Start the breadcrumb with a link to your homepage
         echo '<div class="breadcrumbs">';
         echo '<a href="';
-        echo get_option('home');
+        echo get_option(esc_html('home'));
         echo '">';
+
         echo 'Accueil';
         // bloginfo('name');
         echo '</a>' . $sep;
 	
-	// Check if the current page is a category, an archive or a single page. If so show the category or archive name.
-        if (is_category() || is_single() ){
+        if (is_single() ){
+            the_category(', ');
+            echo $sep;
+            echo "<small>";
+            the_title();
+            echo "</small>";
+        } elseif (is_category()){
             the_category(', ');
         } elseif (is_archive() || is_single()){
             if ( is_day() ) {
-                printf( __( '%s', 'text_domain' ), get_the_date() );
+                printf( __( '%s', 'basic-web-dev-portfolio' ), get_the_date() );
             } elseif ( is_month() ) {
-                printf( __( '%s', 'text_domain' ), get_the_date( _x( 'F Y', 'monthly archives date format', 'text_domain' ) ) );
+                printf( __( '%s', 'basic-web-dev-portfolio' ), get_the_date( _x( 'F Y', 'monthly archives date format', 'basic-web-dev-portfolio' ) ) );
             } elseif ( is_year() ) {
-                printf( __( '%s', 'text_domain' ), get_the_date( _x( 'Y', 'yearly archives date format', 'text_domain' ) ) );
+                printf( __( '%s', 'basic-web-dev-portfolio' ), get_the_date( _x( 'Y', 'yearly archives date format', 'basic-web-dev-portfolio' ) ) );
             } else {
-                _e( 'Archive', 'text_domain' );
+                _e( 'Archive', 'basic-web-dev-portfolio' );
             }
-        }
-	
-	// If the current page is a single post, show its title with the separator
-        if (is_single()) {
-            echo $sep;
-            the_title("<a>", "</a>");
-        }
-	
-	// If the current page is a static page, show its title.
-        if (is_page()) {
-            the_title("<a>", "</a>");
+        }elseif (is_page()) { //If the current page is a static page, show its title.
+            the_title("<small>", "</small>");
         }
 	
 	// if you have a static page assigned to be you posts list page. It will find the title of the static page and display it. i.e Home >> Blog
@@ -63,8 +60,8 @@ function the_breadcrumb() {
             global $post;
             $page_for_posts_id = get_option('page_for_posts');
             if ( $page_for_posts_id ) { 
-                $post = get_page($page_for_posts_id);
-                setup_postdata($post);
+                $the_post = get_page($page_for_posts_id);
+                setup_postdata($the_post);
                 the_title();
                 rewind_posts();
             }
@@ -87,6 +84,7 @@ add_action( 'after_setup_theme', 'basic_web_dev_portfolio_setup' );
 
 register_nav_menus(
     array(
-    'HeaderMenuLocation' => __( 'Primary Menu' ),
+    'HeaderMenuLocation' => __( 'Primary Menu', 'basic-web-dev-portfolio' ),
+    'FooterMenuLocation' => __( 'Footer Menu', 'basic-web-dev-portfolio' ),
     )
 );

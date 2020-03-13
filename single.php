@@ -20,32 +20,8 @@
                                     <p><?php the_date(); ?></p>
                                     <p><?php the_author(); ?></p>
                                     
-                                    <?php 
-
-                                    $fields = get_field_objects(); 
-
-                                    if( $fields["lien-apercu-github"]["value"] || $fields["lien-apercu-codepen"]["value"] || $fields["lien-demo"]["value"] ){
-                                        echo '<ul class="projects-external-links">';
-                                        foreach( $fields as $field ): ?>
-                                            <?php if($field['value']): ?>
-                                                <li><a href="<?php echo $field['value']; ?>"><?php echo $field['label']; ?></a></li>
-                                            <?php endif;
-                                        endforeach;
-                                        echo "</ul>"; ?>
-                                    <?php } ?> 
+                                    <?php get_template_part("links-to-code-demos"); ?> 
                                 </div>
-
-                                <ul class="lang-container">
-                                    <?php
-                                        $pll_args = array(
-                                            "show_names" => 1,
-                                            "show_flags" => 1,
-                                            "hide_current" => 1,
-                                            "hide_if_no_translation" => 1
-                                        );
-                                    ?>
-                                    <?php pll_the_languages( $pll_args ); ?>
-                                </ul>
                             </header>
                             <?php wp_link_pages(); ?>
 

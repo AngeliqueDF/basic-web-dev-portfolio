@@ -6,7 +6,7 @@ if( $fields["lien-apercu-github"]["value"] || $fields["lien-apercu-codepen"]["va
     echo '<ul class="projects-external-links">';
     foreach( $fields as $field ): ?>
         <?php if($field['value']): ?>
-            <li><a href="<?php echo $field['value']; ?>"><?php echo $field['label']; ?></a></li>
+            <li><a href="<?php echo esc_attr($field['value']); ?>"><?php echo esc_attr($field['label']); ?></a></li>
         <?php endif;
     endforeach;
     echo "</ul>"; ?>
