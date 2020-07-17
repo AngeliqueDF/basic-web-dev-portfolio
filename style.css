@@ -200,9 +200,9 @@ a:hover {
   text-decoration: none;
 }
 
-a[href*="//"]:not([href*="localhost:8888"]):after {
+a[href*="//"]:not([href*="adf.dev"]):after {
   content: " ↗ " !important;
-  text-decoration-color: #0042c0;
+  text-decoration-color: black;
   display: inline-block;
 }
 
