@@ -63,7 +63,8 @@ a {
 }
 a[href*="//"]:not([href*="adf.dev"]):after{
 	content: " ↗ " !important;
-	text-decoration-color: $cerulean-blue;
+	// text-decoration-color: $cerulean-blue;
+	text-decoration-color: black;
 	display: inline-block;
 }
 .main-footer nav ul li a {
