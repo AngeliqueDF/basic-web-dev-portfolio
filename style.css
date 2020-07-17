@@ -200,7 +200,7 @@ a:hover {
   text-decoration: none;
 }
 
-a[href*="//"]:not([href*="adf.dev"])::after {
+a[href*="//"]:not([href*="localhost:8888"]):after {
   content: " ↗ " !important;
   text-decoration-color: #0042c0;
   display: inline-block;
@@ -275,10 +275,12 @@ h1.site-name a {
   margin-bottom: 0.5em;
 }
 .header-nav .menu li a {
-  font-size: 2em;
+  font-size: 1.2em;
   text-decoration: underline;
   font-weight: 500;
   color: #0042c0;
+  text-transform: uppercase;
+  font-weight: 700;
 }
 .header-nav .menu li a:hover, .header-nav .menu li a:active {
   color: #0042c0;
@@ -646,7 +648,7 @@ div.post-tags a:hover {
 
 .home .post-content,
 .single .post-content {
-  padding: 0em 1em;
+  padding: 1em;
   border: 1px solid whitesmoke;
   margin-bottom: 1em;
   border-radius: 5px;
@@ -668,6 +670,10 @@ div.post-tags a:hover {
   border-bottom: 1px solid whitesmoke;
   margin: 0 0 2em 0;
   font-size: 1.2em;
+}
+
+.single .post-content img {
+  border-radius: 7px;
 }
 
 .post-categories a {
@@ -729,7 +735,7 @@ COMMENT FORM
   border-radius: 5px;
 }
 #submit:hover {
-  background-color: #5797CF;
+  background-color: #5797cf;
 }
 
 /*
@@ -894,9 +900,6 @@ p {
   .header-nav .menu li {
     margin: 0;
     margin-left: 0.5em;
-  }
-  .header-nav .menu li a {
-    font-size: 1.2em;
   }
 
   section.hero {
